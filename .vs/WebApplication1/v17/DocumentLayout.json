@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\user\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Registration.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Registration.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\Registration.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T16:43:33.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAtwDAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T16:21:25.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\login.css",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAGwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-14T16:17:38.749Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

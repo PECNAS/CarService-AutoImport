@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model ViewModels.EditCarModel;
+
+<form asp-action="EditCar" method="post">
+    <input asp-for="Id" value="@ViewBag.car.Id" hidden />
+    <br />
+    <label>Марка</label>
+    <input value="@ViewBag.car.Mark" asp-for="Mark" />
+    <br />
+
+    <label>Модель</label>
+    <input asp-for="Model" value="@ViewBag.car.Model" />
+    <br/>
+
+    <label>Год</label>
+    <input type="number" asp-for="Year" value="@ViewBag.car.Year" />
+    <br />
+
+    <button type="submit">Сохранить</button>
+</form>

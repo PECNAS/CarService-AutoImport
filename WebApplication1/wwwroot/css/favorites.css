@@ -1,0 +1,9 @@
+
+.fav {
+    background-image: url("../imgs/fav-hover.png");
+}
+
+.fav:hover {
+    cursor: pointer;
+    background-image: url("../imgs/fav.png");
+}

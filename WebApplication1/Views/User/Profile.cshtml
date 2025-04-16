@@ -1,0 +1,118 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Профиль";
+}
+
+<link href="~/css/profile.css" rel="stylesheet"/>
+<div id="content">
+    <div class="profile-info-container">
+        <div class="avatar-container">
+            <img src="~/imgs/avatar.png" width="100%" height="100%">
+            <a asp-controller="User" asp-action="Logout" class="exit-profile">Выйти из аккаунт</a>
+        </div>
+        <div class="info-container">
+            <div class="name-container">
+                <span>@ViewBag.user.Name</span>
+            </div>
+            <div class="point-adress-container" id="users-point" style="margin-top: 6vh;">
+                <div class="point-logo">
+                    <img src="~/imgs/point.png" width="100%" height="100%">
+                </div>
+                <div class="point-text-container">
+                    <div class="point-adress">
+                        <span>@ViewBag.point.Adress</span>
+                    </div>
+                    <div class="point-work-time">
+                        <span>@ViewBag.point.WorkTime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items-container">
+        <div class="items-card">
+            <ul>
+                @for (int i = 0; i < ViewBag.orders.Count; i++)
+                {
+                    int counter = 0;
+                    List<Models.Item> order = ViewBag.orders[i];
+                    Dictionary<string, string> info = ViewBag.orders_info[i];
+
+                    <li>
+                        <div class="buy-row">
+                            <div class="status-row">
+                                <div class="buy-date">
+                                    <span>@info.GetValueOrDefault("Time")</span>
+                                </div>
+                                @{
+                                    string status = info.GetValueOrDefault("Status");
+
+                                    if (status == "ORDERED")
+                                    {
+                                        <div class="buy-status success">
+                                            <span>Оформлен</span>
+                                        </div>
+                                    } else if (status == "ON_THE_WAY")
+                                    {
+                                        <div class="buy-status waiting">
+                                            <span>В пути</span>
+                                        </div>
+                                    } else if (status == "DELIVERED")
+                                    {
+                                        <div class="buy-status success">
+                                            <span>Доставлен</span>
+                                        </div>
+                                    } else if (status == "RECEIVED")
+                                    {
+                                        <div class="buy-status success">
+                                            <span>Получен</span>
+                                        </div>
+                                    } else if (status == "CANCELLED")
+                                    {
+                                        <div class="buy-status cancelled">
+                                            <span>Отменён</span>
+                                        </div>
+                                    }
+                                }
+                                <hr class="separator-row">
+                            </div>
+                            @foreach (Models.Item item in order)
+                            {
+                                <div class="item">
+                                    <div class="item-image-container">
+                                        <img src="~/imgs/@item.Image" width="100%" height="100%">
+                                    </div>
+                                    <div class="item-title-container">
+                                        <span>@item.Title <br />@item.Type</span>
+                                    </div>
+                                    <div class="item-count-container">
+                                        <span>@ViewBag.counts[counter] шт.</span>
+                                    </div>
+                                </div>
+                                counter++;
+                            }
+                            <div class="price-row">
+                                <div class="point-adress-container">
+                                    <div class="point-logo">
+                                        <img src="~/imgs/point.png" width="100%" height="100%">
+                                    </div>
+                                    <div class="point-text-container">
+                                        <div class="point-adress">
+                                            <span>@info.GetValueOrDefault("PointAdress")</span>
+                                        </div>
+                                        <div class="point-work-time">
+                                            <span>@info.GetValueOrDefault("PointWorkTime")</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-container">
+                                    <span>@info.GetValueOrDefault("Price") руб.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

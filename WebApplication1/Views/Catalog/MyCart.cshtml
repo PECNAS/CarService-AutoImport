@@ -1,0 +1,151 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Моя коризна";
+}
+@model ViewModels.PlaceOrderModel;
+
+
+<link href="~/css/cart.css" rel="stylesheet" />
+<div id="content">
+	@if (ViewBag.items.Count == 0)
+	{
+		<div class="empty-cart">
+			<span>Вы пока еще не добавили ничего в корзину</span>
+		</div>
+	}
+	else
+	{
+		<div id="cart-title">
+			<span>Корзина</span>
+		</div>
+		<div class="inner-content">
+			<div class="items-container">
+				@for (int i = 0; i < ViewBag.items.Count; i++)
+				{
+					var item = ViewBag.items[i];
+					int count = ViewBag.counts[i];
+
+					<div class="item">
+						<div class="image-section">
+							<img src="~/imgs/@item.Image" width="100%" height="100%">
+						</div>
+						<div class="text-section">
+							<div class="item-title-container">
+								<a href="/Catalog/ItemDetail/@item.Id">
+									@item.Title
+								</a>
+							</div>
+							<div class="item-type-container">
+								@item.Type
+							</div>
+							<div class="item-price">
+								<span>@item.Price руб./ед.</span>
+							</div>
+							<div class="counter-container">
+								<div class="item-count">
+									<span>@count шт</span>
+								</div>
+								<div class="trash-container">
+									<a
+										asp-controller="Catalog"
+										asp-action="RemoveFromCart"
+										asp-all-route-data='new Dictionary<string, string>{{
+											"id", item.Id.ToString()
+										}}'>
+										<img src="~/imgs/trash.png" width="100%" height="100%">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+			<div class="price-container">
+				<div class="price-text-container">
+					<span>@ViewBag.full_price руб.</span>
+				</div>
+				<div class="buy-btn-container">
+					<form asp-action="PlaceOrder" method="post">
+						<input asp-for="Price" value="@ViewBag.full_price"  hidden/>
+						<input type="number" asp-for="PickPointId" hidden/>
+						<input type="text" asp-for="MyAdress" value="null" hidden/>
+						<button id="PlaceOrderBtn" disabled type="submit">Купить</button>
+					</form>
+				</div>
+			</div>
+			<div class="points-container">
+				<div class="list-title-container">
+					<span>Пункт выдачи</span>
+				</div>
+				<div class="list-container">
+					<ul>
+						@foreach (var point in ViewBag.points)
+						{
+							<li>
+								<label style="display: block;" for="@point.Id">
+									<div class="point-row">
+										<div class="point-logo">
+											<img src="~/imgs/point.png" width="100%" height="100%">
+										</div>
+										<div class="point-text-container">
+											<div class="point-adress">
+												<span>@point.Adress</span>
+											</div>
+											<div class="point-work-time">
+												<span>@point.WorkTime</span>
+											</div>
+										</div>
+										<div class="point-checkbox">
+											<input id="@point.Id" type="radio" name="point-picker" value="@point.Id" class="point-radio">
+										</div>
+									</div>
+								</label>
+							</li>
+						}
+					</ul>
+				</div>
+				<div class="user-point">
+					<div class="user-point-title">
+						<span>Ваш адрес доставки:</span>
+					</div>
+					<div class="user-point-input-container">
+						<input id="my-adress" onkeyup="my_adress()" type="text" placeholder="Введите ваш адрес" class="user-point-input" />
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+
+<script>
+	var radios = document.querySelectorAll(".point-radio");
+	var btn = document.querySelector("#PlaceOrderBtn");
+	console.log(radios);
+
+	for (var i = 0; i < radios.length; i++) {
+		radios[i].addEventListener("change", (event) => {
+			document.querySelector("#PickPointId").value = event.target.value;
+			btn.removeAttribute("disabled");
+			document.querySelector("#MyAdress").value = "";
+		});
+	}
+
+	function my_adress() {
+		var new_value = document.querySelector("#my-adress").value;
+		document.querySelector("#MyAdress").value = new_value;
+
+		if (new_value != "") {
+			var radios = document.querySelectorAll(".point-radio");
+			radios.forEach((el) => {
+				el.checked = false;
+			});
+			document.querySelector("#PickPointId").value = "";
+
+			var btn = document.querySelector("#PlaceOrderBtn");
+			btn.removeAttribute("disabled");
+		} else {
+			var btn = document.querySelector("#PlaceOrderBtn");
+			btn.setAttribute("disabled", "");
+		}
+	}
+</script>

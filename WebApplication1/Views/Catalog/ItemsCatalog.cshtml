@@ -1,0 +1,297 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Каталог товаров";
+}
+@model ViewModels.BuyModel;
+
+<link rel="stylesheet" href="~/css/catalog.css">
+
+<div id="cart-modal" >
+	<span id="modal-text">Товар <span id="modal-title"></span> успешно добавлен в корзину!</span>
+</div>
+
+<script type="text/javascript">
+	function show_modal(title, btn_id, fav=null) {
+		var modal = document.querySelector("#cart-modal");
+		modal.classList = "animate-modal";
+
+		if (fav == null) {
+			document.querySelector("#modal-title").innerHTML = title;
+			var btn = document.querySelector("#" + btn_id);
+			btn.innerHTML = "В корзине";
+			btn.classList.add("in-cart");
+		} else if (fav == true) {
+			var btn = document.querySelector("#" + btn_id);
+
+			if (btn.classList.contains("in-fav")) {
+				btn.classList.remove("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> удален из избранного!";
+			} else {
+				btn.classList.add("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> добавлен в избранное!";
+			}
+
+			var new_action = "/Catalog/RemoveFavorites";
+
+		} else if (fav == false) {
+			var btn = document.querySelector("#" + btn_id);
+
+			if (btn.classList.contains("in-fav")) {
+				btn.classList.remove("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> удален из избранного!";
+			} else {
+				btn.classList.add("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> добавлен в избранное!";
+			}
+
+			var new_action = "/Catalog/Favorites";
+		}
+
+		setTimeout(
+			() => {
+				modal.classList = "";
+				if (fav != null) {
+					var form = document.querySelector("#fav-form-" + btn_id.split('-')[1]);
+					form.setAttribute("action", new_action);
+				}
+			},
+			3 * 1000
+		);
+	}
+
+	function change_catalog() {
+		var new_class = document.querySelector("select").value;
+		var catalogs = document.querySelectorAll(".items-container");
+		catalogs.forEach((el) => {
+			if (el.classList[1] == new_class) {
+				el.style.display = "flex";
+			} else {
+				el.style.display = "none";
+			}
+			console.log(el.classList);
+		});
+	}
+</script>
+
+<div id="content">
+	<div class="categories-container">
+		<div class="category">
+			<form method="post" asp-action="CategoryFilter">
+				<input name="CategoryId" type="number" hidden value="-1" />
+				<button class="all-items" type="submit">Все товары</button>
+			</form>
+		</div>
+		@foreach (Models.Category cat in ViewBag.categories)
+		{
+			<div class="category">
+				<form method="post" asp-action="CategoryFilter">
+					<input name="CategoryId" type="number" hidden value="@cat.Id"/>
+					<button type="submit">@cat.Title</button>
+				</form>
+			</div>
+		}
+	</div>
+	<div class="filters-container">
+		<select name="Filter" onchange="change_catalog()">
+			<option value="DOWN2UP_PRICE">
+				По возрастанию цены
+			</option>
+			<option value="UP2DOWN_PRICE">
+				По убыванию цены
+			</option>
+			<option value="UP2DOWN_TITLE">
+				По названию (А - Я)
+			</option>
+			<option value="DOWN2UP_TITLE">
+				По названию (Я - А)
+			</option>
+			<option value="ALL" selected>
+				По умолчанию
+			</option>
+		</select>
+	</div>
+	<div class="items-container ALL">
+		@foreach (Models.Item item in ViewBag.items)
+		{
+			<div class="item-card">
+				<div class="fav-container">
+				@{
+					if (ViewBag.favs.Contains(item.Id))
+					{
+										<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+											<input hidden type="number" name="ItemId" value="@item.Id"/>
+											<input hidden type="text" name="NeedToRedirect" value="false"/>
+											<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+										</form>
+					} else
+					{
+										<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+											<input hidden type="number" name="ItemId" value="@item.Id"/>
+											<input hidden type="text" name="NeedToRedirect" value="false"/>
+											<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+										</form>
+					}
+				}
+				</div>
+				<div class="item-image">
+						<img src="~/imgs/@item.Image" width="100%" height="100%" />
+				</div>
+				<div class="item-text-container">
+					<div class="item-title">
+						<span>@item.Title</span>
+					</div>
+					<div class="item-type">
+						<span>@item.Type</span>
+					</div>
+				</div>
+				<div class="item-price">
+					<span>@item.Price руб.</span>
+				</div>
+				<div class="item-btns">
+					<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">Посмотреть товар</button>
+					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						@{
+							if (ViewBag.carts.Contains(item.Id))
+							{
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В корзине</button>
+							} else
+							{
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В корзину</button>
+							}
+						}
+					</form>
+				</div>
+			</div>
+		}
+	</div>
+
+	<div class="items-container UP2DOWN_TITLE" style="display: none;">
+		@foreach (Models.Item item in ViewBag.UP2DOWN_TITLE)
+		{
+			<div class="item-card">
+				<div class="item-image">
+					<img src="~/imgs/@item.Image" width="100%" height="100%" />
+				</div>
+				<div class="item-text-container">
+					<div class="item-title">
+						<span>@item.Title</span>
+					</div>
+					<div class="item-type">
+						<span>@item.Type</span>
+					</div>
+				</div>
+				<div class="item-price">
+					<span>@item.Price руб.</span>
+				</div>
+				<div class="item-btns">
+					<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">Посмотреть товар</button>
+					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						<button onclick="show_modal('@item.Title')" class="item-btn to-cart" type="submit">В корзину</button>
+					</form>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="items-container UP2DOWN_PRICE" style="display: none;">
+		@foreach (Models.Item item in ViewBag.UP2DOWN_PRICE)
+		{
+			<div class="item-card">
+				<div class="item-image">
+					<img src="~/imgs/@item.Image" width="100%" height="100%" />
+				</div>
+				<div class="item-text-container">
+					<div class="item-title">
+						<span>@item.Title</span>
+					</div>
+					<div class="item-type">
+						<span>@item.Type</span>
+					</div>
+				</div>
+				<div class="item-price">
+					<span>@item.Price руб.</span>
+				</div>
+				<div class="item-btns">
+					<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">Посмотреть товар</button>
+					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						<button onclick="show_modal('@item.Title')" class="item-btn to-cart" type="submit">В корзину</button>
+					</form>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="items-container DOWN2UP_TITLE" style="display: none;">
+		@foreach (Models.Item item in ViewBag.DOWN2UP_TITLE)
+		{
+			<div class="item-card">
+				<div class="item-image">
+					<img src="~/imgs/@item.Image" width="100%" height="100%" />
+				</div>
+				<div class="item-text-container">
+					<div class="item-title">
+						<span>@item.Title</span>
+					</div>
+					<div class="item-type">
+						<span>@item.Type</span>
+					</div>
+				</div>
+				<div class="item-price">
+					<span>@item.Price руб.</span>
+				</div>
+				<div class="item-btns">
+					<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">Посмотреть товар</button>
+					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						<button onclick="show_modal('@item.Title')" class="item-btn to-cart" type="submit">В корзину</button>
+					</form>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="items-container DOWN2UP_PRICE" style="display: none;">
+		@foreach (Models.Item item in ViewBag.DOWN2UP_PRICE)
+		{
+			<div class="item-card">
+				<div class="item-image">
+					<img src="~/imgs/@item.Image" width="100%" height="100%" />
+				</div>
+				<div class="item-text-container">
+					<div class="item-title">
+						<span>@item.Title</span>
+					</div>
+					<div class="item-type">
+						<span>@item.Type</span>
+					</div>
+				</div>
+				<div class="item-price">
+					<span>@item.Price руб.</span>
+				</div>
+				<div class="item-btns">
+					<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">Посмотреть товар</button>
+					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						<button onclick="show_modal('@item.Title')" class="item-btn to-cart" type="submit">В корзину</button>
+					</form>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+

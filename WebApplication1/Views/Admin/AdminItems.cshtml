@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Товары";
+}
+
+<ol>
+    @foreach (var item in ViewBag.items)
+    {
+        <li>
+            <a href="/Admin/EditItem/@item.Id">(@item.Id) @item.Title</a>
+        </li>
+    }
+</ol>

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Пользователь" + ViewBag.user.UserId;
+}
+@model ViewModels.EditUserModel;
+
+<form asp-action="EditUser" method="post">
+    <input asp-for="UserId" value="@ViewBag.user.UserId" hidden />
+    <br />
+    <label>ФИО</label>
+    <input asp-for="Name" value="@ViewBag.user.Name"/>
+    <br />
+
+    <label>Почта</label>
+    <input asp-for="Email" value="@ViewBag.user.Email" />
+    <br />
+
+    <label>Номер телефона</label>
+    <input asp-for="PhoneNumber" value="@ViewBag.user.PhoneNumber" />
+    <br />
+
+    <button type="submit">Сохранить</button>
+</form>
+
+

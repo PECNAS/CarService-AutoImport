@@ -1,0 +1,434 @@
+@media (max-width: 600px) { /* MOBILE STYLES */
+
+	#content {
+		width: 90vw;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 12vh;
+		font-family: "Montserrat";
+	}
+
+	.profile-info-container {
+		width: 100%;
+		height: 100%;
+		margin-right: 5vw;
+		display: flex;
+	}
+
+	.avatar-container {
+		width: 40vw;
+		height: 40vw;
+	}
+
+	.info-container {
+		width: 30vw;
+		height: 100%;
+		margin-top: 5.5vh;
+		margin-left: 10vw;
+	}
+
+	.name-container {
+		width: 100%;
+		min-height: 10vh;
+		font-size: 4vw;
+		font-weight: 600;
+	}
+
+	.items-container {
+		width: 100%;
+		height: 100%;
+		margin-top: 5vh;
+	}
+
+	.items-card {
+		width: 100%;
+		height: 75vh;
+		background-color: #F9F9F9;
+		box-shadow: -.6vw .8vw 1.8vw #989898;
+		border-radius: .45vw;
+		padding: 1vh 2vw 1vh 1vw;
+	}
+
+
+		.items-card ul {
+			width: 100%;
+			height: 100%;
+			list-style-type: none;
+			overflow-y: scroll;
+		}
+
+	li {
+		width: 100%;
+	}
+
+	.buy-row {
+		width: 100%;
+		height: 100%;
+	}
+
+	.status-row {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.buy-date {
+		min-width: 10vw;
+		margin-left: .4vw;
+		font-size: 3vw;
+		font-weight: 200;
+	}
+
+	.buy-status {
+		min-width: 20vw;
+		text-align: center;
+		color: white;
+		border-radius: 1.4vw;
+		font-size: 3vw;
+		padding: .1vw;
+		padding-left: .4vw;
+		padding-right: .4vw;
+		margin-left: 16.2vw;
+	}
+
+	.success {
+		background-color: #00D500;
+	}
+
+	.cancelled {
+		background-color: #E20000;
+	}
+
+	.waiting {
+		background-color: #FFD02E;
+	}
+
+	.separator-row {
+		width: 98%;
+		height: 0.05vw;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+
+	.item {
+		width: 95%;
+		height: 6vh;
+		margin-bottom: 4vh;
+		display: flex;
+	}
+
+	.item-image-container {
+		width: 16vw;
+		height: 16vw;
+	}
+
+	.item-title-container {
+		width: 40vw;
+		height: 100%;
+		margin-left: 3.5vw;
+		font-size: 3vw;
+		font-weight: 500;
+	}
+
+	.item-count-container {
+		width: 10vw;
+		height: 100%;
+		font-size: 3vw;
+	}
+
+	.price-row {
+		width: 95%;
+		min-height: 2vh;
+		margin-right: auto;
+		margin-bottom: 2vh;
+		margin-top: 4vh;
+		display: flex;
+		font-size: 1.6vw;
+	}
+
+	.price-container {
+		width: 20vw;
+		text-align: right;
+		font-size: 3vw;
+	}
+
+	.point-adress-container {
+		width: 55vw;
+		height: 100%;
+		display: flex;
+	}
+
+	.point-logo {
+		width: 6vw;
+		height: 6vw;
+	}
+
+	.point-text-container {
+		width: 55vw;
+		height: 100%;
+		margin-left: 3vw;
+	}
+
+	.point-adress {
+		width: 100%;
+		min-height: 4vh;
+		font-size: 3vw;
+	}
+
+	.point-work-time {
+		width: 100%;
+		min-height: 2vh;
+		font-size: 2vw;
+		font-weight: 200;
+	}
+
+	.exit-profile {
+		width: 100%;
+		display: inline-block;
+		margin-left: 6vw;
+		color: #000000;
+		font-size: 3vw;
+		font-weight: 500;
+		text-decoration: none
+	}
+
+	#users-point {
+		display: none;
+	}
+}
+
+
+
+
+
+@media (min-width: 600px) {
+
+	#content {
+		width: 90vw;
+		height: 100%;
+
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 6vh;
+
+		display: flex;
+
+		font-family: "Montserrat";
+	}
+
+	.profile-info-container {
+		width: 40vw;
+		height: 100%;
+
+		margin-right: 5vw;
+		display: flex;
+
+	}
+
+	.avatar-container {
+		width: 100%;
+		height: 18vw;
+	}
+
+	.info-container {
+		width: 20vw;
+		height: 100%;
+
+		margin-top: 5.5vh;
+		margin-left: 1.5vw;
+	}
+
+
+	.name-container {
+		width: 100%;
+		min-height: 10vh;
+
+		font-size: 2.2vw;
+		font-weight: 600;
+	}
+
+	.items-container {
+		width: 48vw;
+		height: 100%;
+	}
+
+	.items-card {
+		width: 100%;
+		height: 75vh;
+
+		background-color: #F9F9F9;
+		box-shadow: -.6vw .8vw 1.8vw #989898;
+		border-radius: .45vw;
+
+		padding: 1vh 2vw 1vh 1vw;
+	}
+
+	.items-card ul {
+		width: 100%;
+		height: 100%;
+
+		list-style-type: none;
+		overflow-y: scroll;
+	}
+
+	li {
+		width: 100%;
+	}
+
+	.buy-row {
+		width: 100%;
+		height: 100%;
+	}
+
+	.status-row {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.buy-date {
+		min-width: 10vw;
+		margin-left: .4vw;
+
+		font-size: 1vw;
+		font-weight: 200;
+	}
+
+	.buy-status {
+		min-width: 7vw;
+
+		text-align: center;
+		color: white;
+		border-radius: .5vw;
+		font-size: 1vw;
+
+		padding: .1vw;
+		padding-left: .4vw;
+		padding-right: .4vw;
+
+		margin-left: 16.2vw;
+	}
+
+	.success {
+		background-color: #00D500;
+	}
+
+	.cancelled {
+		background-color: #E20000;
+	}
+
+	.waiting {
+		background-color: #FFD02E;
+	}
+
+	.separator-row {
+		width: 98%;
+		height: 0.05vw;
+
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+
+	.item {
+		width: 95%;
+		height: 12vh;
+
+		/*margin-left: auto;*/
+		margin-bottom: 1vh;
+
+		display: flex;
+	}
+
+	.item-image-container {
+		width: 5.5vw;
+		height: 5.5vw;
+	}
+
+	.item-title-container {
+		width: 26vw;
+		height: 100%;
+
+		margin-left: 1.5vw;
+		margin-top: 1vh;
+
+		font-size: 1vw;
+		font-weight: 500;
+	}
+
+	.item-count-container {
+		width: 3vw;
+		height: 100%;
+
+		font-size: 1vw;
+	}
+
+	.price-row {
+		width: 95%;
+		height: 4vh;
+
+		margin-right: auto;
+		margin-bottom: 10vh;
+		margin-top: 4vh;
+		display: flex;
+
+		font-size: 1.6vw;
+	}
+
+	.price-container {
+		width: 10vw;
+		text-align: right;
+	}
+
+	.point-adress-container {
+		width: 25vw;
+		height: 100%;
+		display: flex;
+	}
+
+	.point-logo {
+		width: 2.5vw;
+		height: 2.5vw;
+	}
+
+	.point-text-container {
+		width: 16vw;
+		height: 100%;
+		margin-left: 1vw;
+	}
+
+	.point-adress {
+		width: 100%;
+		min-height: 4vh;
+		font-size: 1vw;
+	}
+
+	.point-work-time {
+		width: 100%;
+		min-height: 2vh;
+		font-size: .8vw;
+		font-weight: 200;
+	}
+
+	.exit-profile {
+		display: inline-block;
+		margin-top: 3vh;
+		margin-left: 4vw;
+		color: #000000;
+		font-size: 1vw;
+		font-weight: 500;
+		text-decoration: none;
+		transition: .3s all;
+	
+	}
+
+		.exit-profile:hover {
+			color: #b30016;
+		}
+}
