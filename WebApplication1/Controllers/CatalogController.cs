@@ -264,5 +264,12 @@ namespace WebApplication1.Controllers
             else
                 return new NoContentResult();
 		}
+
+        [HttpGet]
+        public object AsyncFinder(string query)
+        {
+            var items = db.Items.Where(i => i.Title.ToLower().Contains(query)).ToList();
+            return new { Items = items };
+        }
 	}
 }

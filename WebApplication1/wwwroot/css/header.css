@@ -42,7 +42,7 @@ button:hover {
 
 	#mobile-header {
 		width: 100vw;
-		min-height: 10vh;
+		min-height: 7vh;
 		display: flex;
 		box-shadow: -.6vw .8vw 1.8vw #989898;
 		position: fixed;
@@ -145,7 +145,7 @@ button:hover {
 	.mobile-logo {
 		width: 40vw;
 		margin-left: auto;
-		margin-top: -2vh;
+		margin-top: 1vh;
 	}
 
 	.searcher-container {
@@ -199,89 +199,146 @@ button:hover {
 
 
 #footer {
+	display: none;
+}
+
+#mobile-footer {
+	display: block;
 	width: 100%;
-	min-height: 22vh;
-	margin-top: 3vh;
-	padding-top: 3vh;
-	display: flex;
+	height: 100%;
 	background-color: #9A0300;
-	color: white;
-	font-size: 2.1vw;
-	ul
-			{
-				list-style-type: none;
-				padding: 0;
-				margin: 0;
-			}
-	}
-
-	.footer-work-time {
-		width: 40vw;
-		margin-left: 4vw;
-	}
-
-	.footer-time {
-		width: 100%;
-		display: flex;
-	}
-
-	.day-container {
-		width: 20vw;
-	}
-
-	.time-container {
-		width: 20vw;
-	}
-
-	.holiday {
-		color: #CFCFCF;
-	}
-
-	.footer-contacts {
-		width: 30vw;
-		margin-left: 20vw;
-	}
-
-.contacts-title {
-	font-size: 4vw;
-	font-weight: 600;
-	margin-bottom: 1vh;
-	border-bottom: .1vw solid #b30016;
+	color: #FFFFFF;
 }
 
-	.contacts-list {
-		width: 100%;
-		margin-left: 0vw;
-	}
-
-	.contact-number {
-		display: block;
-		width: 100%;
-	}
-
-
-	.footer-logo {
-		display: none;
-	}
-
-
-.social-container:first-child {
-	margin-top: 2vh;
+.footer-logo {
+	display: none;
+	width: 100%;
+	height: 10vh;
 }
-.social-container {
+
+.footer-text {
+	width: 95vw;
+	height: 100%;
+	padding-top: 2vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer-contacts {
+	width: 100%;
+	height: 100%;
 	display: flex;
-	margin-bottom: 1vh;
 }
 
-.social-container img {
-	width: 5vw;
-	height: 5vw;
+.footer-contacts span {
+	display: block;
+	width: 40vw;
+	font-weight: 600;
+	font-size: 4vw;
+}
+
+.footer-contacts a {
+	display: block;
+	width: 7vw;
+	height: 100%;
 	margin-right: 2vw;
 }
 
-.social-container .contact-number{
+.footer-worktime {
+	width: 100%;
+	height: 100%;
+	margin-top: .6vh;
+	
+	font-weight: 500;
 	font-size: 3vw;
 }
+
+.footer-links-list {
+	width: 100%;
+	height: 100%;
+	margin-top: 3vh;
+}
+
+.footer-link {
+	width: 100%;
+	height: 5vh;
+	border-bottom: 0.1vw solid #FFFFFF;
+}
+
+.footer-link a {
+	font-size: 4vw;
+	color: white;
+	font-weight: 500;
+	text-decoration: none;
+	display: inline-block;
+	padding-top: 1vh;
+}
+
+
+
+#searcher-results {
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 80vw;
+	height: 50vh;
+	left: 10vw;
+	top: 9vh;
+	z-index: 6;
+	box-shadow: -.2vw .4vw 1vw #989898;
+	border-radius: 1.2vw;
+
+	display: none;
+}
+
+.result-list {
+	height: 100%;
+	width: 100%;
+	list-style-type: none;
+	overflow-y: auto;
+	padding: 0;
+	padding-top: 2vh;
+	
+	a {
+		  color: #262626;
+		  text-decoration: none;
+	  }
+}
+
+.search-result {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2vh;
+	display: flex;
+}
+
+.res-img-container {
+	width: 30vw;
+	height: 100%;
+	margin-right: 2vw;
+}
+
+.res-text-container {
+	width: 48vw;
+}
+
+.res-title-container {
+	width: 100%;
+	font-size: 5vw;
+	font-weight: 600;
+}
+
+.res-price-container {
+	width: 100%;
+	font-size: 4vw;
+	font-weight: 500;
+}
+
+
+
+
+
+
 
 }
 
@@ -498,4 +555,70 @@ button:hover {
 	height: 2vw;
 	margin-right: 1vw;
 }
+
+#mobile-footer {
+	display: none;
+}
+
+
+#searcher-results {
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 20vw;
+	height: 50vh;
+	right: 2.95vw;
+	top: 13vh;
+	z-index: 6;
+	box-shadow: -.2vw .4vw 1vw #989898;
+	border-radius: 1.2vw;
+	display: none;
+}
+
+.result-list {
+	height: 100%;
+	width: 100%;
+	list-style-type: none;
+	overflow-y: auto;
+	padding: 0;
+	padding-top: 2vh;
+	a
+
+{
+	color: #262626;
+	text-decoration: none;
+}
+
+}
+
+.search-result {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2vh;
+	display: flex;
+}
+
+.res-img-container {
+	width: 8vw;
+	height: 100%;
+	margin-right: 2vw;
+}
+
+.res-text-container {
+	width: 10vw;
+}
+
+.res-title-container {
+	width: 100%;
+	font-size: 1.2vw;
+	font-weight: 400;
+}
+
+.res-price-container {
+	width: 100%;
+	font-size: .9vw;
+	font-weight: 500;
+}
+
+
 }

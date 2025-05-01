@@ -11,14 +11,16 @@
 .about-section {
     width: 100%;
     height: 100%;
-    display: flex;
+    /*display: flex;*/
     background-color: #242425;
     padding: 5vw;
 }
 
 .about-text-container {
-    width: 40vw;
+    width: 90vw;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-title {
@@ -41,8 +43,11 @@
 }
 
 .about-map-container {
-    width: 40vw;
-    margin-left: 10vw;
+    width: 90vw;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
 }
 
 iframe {
@@ -155,10 +160,10 @@ iframe {
     
 }
 
-.more-info-summary::marker {
+/*.more-info-summary::marker {
     display: none;
     content: "";
-}
+}*/
 
 .more-info-content {
     width: 100%;
@@ -172,7 +177,7 @@ iframe {
 
 @media (max-width: 600px) {
     .hero-section {
-        margin-top: 10vh;
+        margin-top: 7vh;
     }
 
     .about-title {
@@ -204,7 +209,7 @@ iframe {
         margin: 0;
         border-bottom: 1px solid white;
         width: 100%;
-        min-height: 20vh;
+        min-height: 15vh;
     }
 
     .advantage-img {

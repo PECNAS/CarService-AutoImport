@@ -74,41 +74,43 @@
 </script>
 
 <div id="content">
-	<div class="categories-container">
-		<div class="category">
-			<form method="post" asp-action="CategoryFilter">
-				<input name="CategoryId" type="number" hidden value="-1" />
-				<button class="all-items" type="submit">Все товары</button>
-			</form>
+	<div class="filter-buttons-container">
+		<div class="filters-container">
+			<select name="Filter" onchange="change_catalog()">
+				<option value="DOWN2UP_PRICE">
+					По возрастанию цены
+				</option>
+				<option value="UP2DOWN_PRICE">
+					По убыванию цены
+				</option>
+				<option value="UP2DOWN_TITLE">
+					По названию (А - Я)
+				</option>
+				<option value="DOWN2UP_TITLE">
+					По названию (Я - А)
+				</option>
+				<option value="ALL" selected>
+					По умолчанию
+				</option>
+			</select>
 		</div>
-		@foreach (Models.Category cat in ViewBag.categories)
-		{
+		<div class="categories-container">
 			<div class="category">
 				<form method="post" asp-action="CategoryFilter">
-					<input name="CategoryId" type="number" hidden value="@cat.Id"/>
-					<button type="submit">@cat.Title</button>
+					<input name="CategoryId" type="number" hidden value="-1" />
+					<button class="all-items" type="submit">Все товары</button>
 				</form>
 			</div>
-		}
-	</div>
-	<div class="filters-container">
-		<select name="Filter" onchange="change_catalog()">
-			<option value="DOWN2UP_PRICE">
-				По возрастанию цены
-			</option>
-			<option value="UP2DOWN_PRICE">
-				По убыванию цены
-			</option>
-			<option value="UP2DOWN_TITLE">
-				По названию (А - Я)
-			</option>
-			<option value="DOWN2UP_TITLE">
-				По названию (Я - А)
-			</option>
-			<option value="ALL" selected>
-				По умолчанию
-			</option>
-		</select>
+			@foreach (Models.Category cat in ViewBag.categories)
+			{
+				<div class="category">
+					<form method="post" asp-action="CategoryFilter">
+						<input name="CategoryId" type="number" hidden value="@cat.Id" />
+						<button type="submit">@cat.Title</button>
+					</form>
+				</div>
+			}
+		</div>
 	</div>
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)

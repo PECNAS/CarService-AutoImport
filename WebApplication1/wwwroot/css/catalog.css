@@ -4,6 +4,7 @@
 	margin: 0px;
 }
 
+
 @media (max-width: 600px) {  /* MOBILE STYLES */
 	#content {
 		width: 80vw;
@@ -28,7 +29,7 @@
 		margin-bottom: 1vh;
 		margin-right: 1vw;
 		border: 0.14vw solid #b30016;
-		border-radius: 1.2vw;
+		/*border-radius: 1.2vw;*/
 		font-weight: 500;
 		font-size: 2.4vw;
 		transition: .3s all;
@@ -50,13 +51,14 @@
 
 
 	.filters-container {
-		min-width: 14vw;
-		margin: 0vh 0vw .5vh 1vw;
+		width: 30vw;
+		margin-right: 2vw;
 	}
 
 
 	select {
-		border-radius: 1.2vw;
+		width: 100%;
+		/*border-radius: 1.2vw;*/
 		padding: .2vh 1vw;
 		font-size: 2vw;
 	}
@@ -121,7 +123,7 @@
 	.item-btn {
 		width: 100%;
 		height: 3.5vh;
-		border-radius: 1.4vw;
+		/*border-radius: 1.4vw;*/
 		font-size: 2.2vw;
 		font-weight: 600;
 		margin-bottom: .1vh;
@@ -145,8 +147,8 @@
 	}
 
 	.in-cart {
-		border: 0.1vw solid #007a1b;
-		background: #007a1b;
+		border: 0.1vw solid #120075;
+		background: #120075;
 		color: #FFFFFF;
 	}
 
@@ -240,20 +242,24 @@
 	}
 
 	.categories-container {
-		width: 78vw;
+		width: 50vw;
+		height: 3.3vh;
 		display: flex;
+		/*
 		margin-left: auto;
 		margin-right: auto;
-		/*overflow-x: auto;*/
+		overflow-x: auto;*/
 		flex-wrap: wrap;
 	}
 
-	.category button{
+	.category button {
+		height: 100%;
+		height: 3.5vh;
 		padding: 0vh .4vw;
 		margin-bottom: 1vh;
 		margin-right: .4vw;
 		border: 0.14vw solid #b30016;
-		border-radius: 1.2vw;
+		/*border-radius: 1.2vw;*/
 		font-weight: 500;
 		font-size: .8vw;
 		transition: .3s all;
@@ -275,14 +281,18 @@
 
 
 	.filters-container {
-		min-width: 14vw;
-		margin: 2vh 0vw 2vh 1vw;
+		height: 3vh;
+		width: 20vw;
+		margin-right: 5vw;
 	}
 
 
 	select {
-		border-radius: 1.2vw;
+		height: 100%;
+		width: 100%;
+		/*border-radius: 1.2vw;*/
 		padding: .2vh 1vw;
+		font-size: 1vw;
 	}
 
 
@@ -290,6 +300,7 @@
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
+		margin-top: 2vh;
 		/*	outline: solid green;*/
 	}
 
@@ -384,7 +395,7 @@
 		width: 100%;
 		height: 3.5vh;
 	
-		border-radius: 1.4vw;
+		/*border-radius: 1.4vw;*/
 		font-size: .9vw;
 		margin-bottom: 1vh;
 
@@ -458,4 +469,13 @@
 
 .item-card-clicker:hover {
 	color: #464646;
+}
+
+.filter-buttons-container {
+	width: 78vw;
+	height: 100%;
+	display: flex;
+
+	margin-left: auto;
+	margin-right: auto;
 }
