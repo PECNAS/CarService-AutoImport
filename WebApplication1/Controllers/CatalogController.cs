@@ -139,7 +139,7 @@ namespace WebApplication1.Controllers
             ViewBag.items = items;
             ViewBag.counts = counts;
             ViewBag.full_price = full_price;
-            ViewBag.points = db.PickPoints.ToList();
+            ViewBag.points = db.PickPoints.Where(p => p.IndividualUserId == user.UserId || p.IndividualUserId == null).ToList();
 
             return View(); 
         }
@@ -204,7 +204,7 @@ namespace WebApplication1.Controllers
 			Order new_order = new Order()
             {
                 Time = DateTime.Now.ToString(),
-                Status = "Ordered",
+                Status = "ORDERED",
                 Price = model.Price,
                 PickPoint = pickPoint,
                 ShopCarts = carts.ToList(),

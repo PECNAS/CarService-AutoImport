@@ -71,7 +71,7 @@
 
 	.item-card {
 		width: 35vw;
-		height: 40vh;
+		height: 36vh;
 		margin: 0vw 1vw 0vw 1vw;
 		margin-bottom: 3vw;
 		background-color: #FFFFFF;
@@ -295,7 +295,7 @@
 
 	.item-card {
 		width: 14vw;
-		height: 46vh;
+		height: 42vh;
 
 		margin: 0vw 1vw 0vw 1vw;
 		margin-bottom: 3vw;
@@ -448,4 +448,14 @@
 			top: -10vh;
 		}
 	}
+}
+
+.item-card-clicker {
+	color: #262626;
+	outline: none;
+	text-decoration: none;
+}
+
+.item-card-clicker:hover {
+	color: #464646;
 }

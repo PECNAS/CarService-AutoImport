@@ -113,6 +113,7 @@
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
 		{
+			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
 			<div class="item-card">
 				<div class="fav-container">
 				@{
@@ -148,9 +149,11 @@
 					<span>@item.Price руб.</span>
 				</div>
 				<div class="item-btns">
+					<!--
 					<a href="/Catalog/ItemDetail/@item.Id">
 						<button class="item-btn show-item">Посмотреть товар</button>
 					</a>
+						-->
 					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 						<input asp-for="Counter" value="1" style="display: none;" />
@@ -166,6 +169,7 @@
 					</form>
 				</div>
 			</div>
+			</a>
 		}
 	</div>
 

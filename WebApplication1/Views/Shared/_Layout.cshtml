@@ -12,42 +12,41 @@
     @if (ViewData["ShowHeader"] == null)
     {
         <div id="header">
+            <!--
             <div class="logo-container"> 
                 <a href="/"><img src="~/imgs/logo.svg" width="100%" height="100%"></a>
+            </div>
+            -->
+            <div class="navbar-container">
+                <div class="navbar-el">
+                    <a asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
+                </div>
+                <div class="navbar-el">
+                    <a asp-controller="Catalog" asp-action="Index">ТОВАРЫ</a>
+                </div>
+                <div class="navbar-el">
+                    <a asp-controller="Catalog" asp-action="MyCart">КОРЗИНА</a>
+                </div>
+                <div class="navbar-el">
+                    <a asp-controller="User" asp-action="Favorites">ИЗБРАННОЕ</a>
+                </div>
+                <div class="navbar-el">
+                    <a asp-controller="User" asp-action="Index">ПРОФИЛЬ</a>
+                </div>
             </div>
             <form asp-action="Finder" asp-controller="Catalog" method="post">
                 <div class="searcher-container">
                     <input name="query" type="text" id="searcher">
-                    <!--<button type="submit" id="search-button"><b>Найти</b></button>-->
                     <button type="submit" id="search-button"></button>
                 </div>
             </form>
-            <div class="navbar-container">
-                <div class="navbar-el">
-                    <a asp-controller="Catalog" asp-action="Index">Товары</a>
+            <!--
+                <div class="profile-container" style="margin-left: 10vw;">
+                    <div id="avatar-container">
+                        <a asp-action="Index" asp-controller="User"><img src="~/imgs/avatar.png"></a>
+                    </div>
                 </div>
-                <div class="navbar-el">
-                    <a asp-controller="Catalog" asp-action="MyCart">Корзина</a>
-                </div>
-                <div class="navbar-el">
-                    <a asp-controller="User" asp-action="Favorites">Избранное</a>
-                </div>
-            </div>
-            <div class="profile-container" style="margin-left: 10vw;">
-                <!--<div id="auth-container">
-                    @if (User.Identity.Name != null)
-                    {
-                        <a asp-controller="User" asp-action="Index">@User.Identity.Name</a>
-                        <a asp-controller="User" asp-action="Logout" class="exit-profile">(Выйти)</a>
-                    } else
-                    {
-                        <a asp-controller="User" asp-action="Login">Войти</a>
-                    }
-                </div>-->
-                <div id="avatar-container">
-                    <a asp-action="Index" asp-controller="User"><img src="~/imgs/avatar.png"></a>
-                </div>
-            </div>
+            -->
         </div>
         <div id="mobile-header">
             <div class="menu">
@@ -55,16 +54,19 @@
                 <label for="burger-checkbox" class="burger"></label>
                 <ul class="menu-list">
                     <li>
-                        <a class="menu-item" asp-controller="Catalog" asp-action="Index">Товары</a>
+                        <a class="menu-item" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
                     <li>
                     <li>
-                        <a class="menu-item" asp-controller="Catalog" asp-action="MyCart">Корзина</a>
+                        <a class="menu-item" asp-controller="Catalog" asp-action="Index">ТОВАРЫ</a>
                     <li>
                     <li>
-                        <a class="menu-item" asp-controller="User" asp-action="Index" method="post">Профиль</a>
+                        <a class="menu-item" asp-controller="Catalog" asp-action="MyCart">КОРЗИНА</a>
+                    <li>
+                    <li>
+                        <a class="menu-item" asp-controller="User" asp-action="Index" method="post">ПРОФИЛЬ</a>
                     </li>
                     <li>
-                        <a class="menu-item" asp-controller="User" asp-action="Favorites">Избранное</a>
+                        <a class="menu-item" asp-controller="User" asp-action="Favorites">ИЗБРАННОЕ</a>
                     </li>
                 </ul>
             </div>
@@ -190,10 +192,23 @@
                     <span class="contact-number">Тел: +7 (843) 214-50-01</span>
                     <span class="contact-number">Тел: +7 (952) 039-86-00</span>
                 </div>
+
+                <div class="contacts-list">
+                    <div class="social-container">
+                        <img src="~/imgs/vk.png" width="100%" height="100%"/>
+                        <span class="contact-number">AutoImport</span>
+                    </div>
+                    <div class="social-container">
+                        <img src="~/imgs/telegram.png" width="100%" height="100%" />
+                        <span class="contact-number">AutoImport</span>
+                    </div>
+                </div>
             </div>
+            <!--
             <div class="footer-logo">
                 <img src="~/imgs/logo.svg"  width="100%" height="100%"/>
             </div>
+            -->
         </div>
         }
 </body>

@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         async public Task<IActionResult> Index()
         {
             return View();
-
+             
             var user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
             if (user == null)
             {

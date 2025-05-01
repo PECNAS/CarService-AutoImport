@@ -2,6 +2,18 @@ body {
 	background-color: #535353;
 }
 
+/* ”ƒ¿À≈Õ»≈ ¬—“–Œ≈ÕÕŒ√Œ √À¿«¿ œŒ ¿«¿ œ¿–ŒÀﬂ ¬ EDGE 10 11*/
+input::-ms-reveal,
+input::-ms-clear {
+	display: none;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+}
+
 @media (max-width: 600px) {
 	#modal-shadow {
 		position: absolute;
@@ -82,7 +94,7 @@ body {
 	.input-row input {
 		width: 60vw;
 		height: 4vh;
-		padding: .5vh 0vh .5vh 6vw;
+		padding: .5vh 7vw .5vh 6vw;
 		border: 0.05vw solid #C9C9C9;
 		border-radius: 1.2vw;
 	}
@@ -150,7 +162,8 @@ body {
 			margin-left: -.5vw;
 			border: none;
 			border-radius: 1.2vw;
-			background-color: #b30016;
+			/*background-color: #b30016;*/
+			background-color:#04b3eb;
 			color: white;
 			transition: .3s all;
 		}
@@ -180,7 +193,7 @@ body {
 	text-align: center;
 
 	a {
-		  color: white;
+		  color: #04b3eb;
 		  font-weight: 600;
 		  text-decoration: none;
 	  }
@@ -295,7 +308,7 @@ body {
 	width: 32vw;
 	height: 5vh;
 
-	padding: .5vh 0vh .5vh 3.5vw;
+	padding: .5vh 3vw .5vh 3.5vw;
 
 	/*border: 0.05vw solid #C9C9C9;*/
 	border: none;
@@ -381,7 +394,8 @@ body {
 	border: none;
 	border-radius: 1.2vw;
 
-	background-color: #b30016;
+	/*background-color: #b30016;*/
+	background-color: #04b3eb;
 	color: white;
 
 	transition: .3s all;
@@ -411,7 +425,7 @@ body {
 	text-align: center;
 
 	a {
-		  color: white;
+		  color: #04b3eb;
 		  font-weight: 600;
 		  text-decoration: none;
 	  }

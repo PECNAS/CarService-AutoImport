@@ -28,7 +28,7 @@ namespace WebApplication1.Controllers
             List<int> counts = new List<int>();
             List<Dictionary<string, string>> orders_info = new List<Dictionary<string, string>>();
 
-            var db_orders = db.Orders.Where(o => o.User == user).ToList();
+            var db_orders = db.Orders.Where(o => o.User == user).OrderByDescending(o => o.Time).ToList();
             foreach (Order order in db_orders)
             {
                 PickPoint point = db.PickPoints.First(p => p.Id == order.PickPointId);
@@ -95,7 +95,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == Models.User.GetHashString(model.Password));
                 if (user != null)
                 {
                     await Authenticate(model.Email); // аутентификация
@@ -127,7 +127,7 @@ namespace WebApplication1.Controllers
                     db.Users.Add(
                         new User {
                             Email = model.Email,
-                            Password = model.Password,
+                            Password = Models.User.GetHashString(model.Password),
                             PhoneNumber = model.PhoneNumber,
                             Name = model.Name
                         });

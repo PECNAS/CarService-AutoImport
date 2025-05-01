@@ -1,0 +1,254 @@
+.hero-section {
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    width: 100%; 
+    height: 100%;
+}
+
+.about-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #242425;
+    padding: 5vw;
+}
+
+.about-text-container {
+    width: 40vw;
+    height: 100%;
+}
+
+.about-title {
+    width: 100%;
+    font-size: 4.5vw;
+    color: #5E0301;
+    font-weight: 600;
+}
+
+.about-desc {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2vw;
+    color: white;
+    margin-bottom: 4vh;
+}
+
+.about-desc p {
+    text-indent: 1vw;
+}
+
+.about-map-container {
+    width: 40vw;
+    margin-left: 10vw;
+}
+
+iframe {
+    margin-top: 10%;
+    width: 100%;
+    height: 90%;
+}
+
+.advs-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 10vh;
+    padding-bottom: 20vh;
+}
+
+.advs-title {
+    font-size: 3vw;
+    font-weight: 500;
+    text-align: center;
+}
+
+.advs-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #9A0300;
+    justify-content: center;
+}
+
+.advantage {
+    width: 20vw;
+    margin: 5vh 0vw 5vh 4vw;
+    padding-right: 5vw;
+    border-right: 1px solid white;
+}
+
+.advantage:last-child {
+    border: none;
+    margin-right: 0;
+    
+}
+
+.advantage-img {
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.advantage-img img {
+    width: 6vw;
+    height: 12vh;
+}
+
+.advantage-text {
+    width: 80%;
+    height: 100%;
+    word-wrap: normal;
+    text-align: center;
+    margin-top: 4vh;
+    margin-left: auto;s
+    margin-right: auto;
+}
+
+.advantage-text span {
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: white;
+}
+
+.more-info-container {
+    width: 100%;
+    height: 100%;
+    background-color: #242425;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.more-info-title {
+    font-size: 3.5vw;
+    color: #9A0300;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.more-info-section {
+    width: 90vw;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+
+}
+
+.more-info-item {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3vh;
+}
+
+.more-info-summary {
+    width: 100%;
+    height: 100%;
+    font-size: 1.4vw;
+
+    border-bottom: 1px solid white;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    
+}
+
+.more-info-summary::marker {
+    display: none;
+    content: "";
+}
+
+.more-info-content {
+    width: 100%;
+    padding-top: 2vh;
+    
+    p {
+          text-indent: 1vw;
+          font-size: 1.2vw;
+      }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        margin-top: 10vh;
+    }
+
+    .about-title {
+        font-size: 5vw;
+        font-weight: 900;
+    }
+
+    .about-desc {
+        font-size: 4vw;
+    }
+
+    .advs-container {
+        margin-top: 3vh;
+        margin-bottom: 0vh;
+        padding: 0;
+    }
+
+    .advs-title {
+        font-size: 5vw;
+        font-weight: 700;
+    }
+    .advs-section {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .advantage {
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid white;
+        width: 100%;
+        min-height: 20vh;
+    }
+
+    .advantage-img {
+        width: 20vw;
+        height: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .advantage-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .advantage-text {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .advantage-text span{
+        font-size: 4vw;
+    }
+
+
+    .more-info-container {
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        margin-bottom: 0;
+    }
+
+    .more-info-title {
+        font-size: 6vw;
+        font-weight: 900;
+    }
+
+    .more-info-summary {
+        font-size: 4vw;
+        font-weight: 600;
+    }
+
+    .more-info-content p{
+        font-size: 4vw;
+    }
+}
