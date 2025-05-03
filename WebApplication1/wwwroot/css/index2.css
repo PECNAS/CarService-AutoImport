@@ -11,16 +11,14 @@
 .about-section {
     width: 100%;
     height: 100%;
-    /*display: flex;*/
+    display: flex;
     background-color: #242425;
     padding: 5vw;
 }
 
 .about-text-container {
-    width: 90vw;
+    width: 40vw;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .about-title {
@@ -43,10 +41,10 @@
 }
 
 .about-map-container {
-    width: 90vw;
-    height: 20vh;
+    width: 40vw;
+    height: 60vh;
     margin-left: auto;
-    margin-right: auto;
+    
     margin-bottom: 2vh;
 }
 
@@ -255,5 +253,55 @@ iframe {
 
     .more-info-content p{
         font-size: 4vw;
+    }
+
+    
+    .about-section {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /*display: flex;*/
+        background-color: #242425;
+        padding: 5vw;
+    }
+
+    .about-text-container {
+        width: 90vw;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-title {
+        width: 100%;
+        font-size: 6.5vw;
+        color: #5E0301;
+        font-weight: 600;
+    }
+
+    .about-desc {
+        width: 100%;
+        height: 100%;
+        font-size: 4.2vw;
+        color: white;
+        margin-bottom: 4vh;
+    }
+
+    .about-desc p {
+        text-indent: 1vw;
+    }
+
+    .about-map-container {
+        width: 90vw;
+        height: 20vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vh;
+    }
+
+    iframe {
+        margin-top: 10%;
+        width: 100%;
+        height: 90%;
     }
 }

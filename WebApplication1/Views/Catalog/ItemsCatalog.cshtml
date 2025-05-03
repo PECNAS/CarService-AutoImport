@@ -5,9 +5,19 @@
 @model ViewModels.BuyModel;
 
 <link rel="stylesheet" href="~/css/catalog.css">
+<link rel="stylesheet" href="~/css/modal.css">
 
 <div id="cart-modal" >
-	<span id="modal-text">Товар <span id="modal-title"></span> успешно добавлен в корзину!</span>
+	<div class="modal-image">
+		<img src="~/imgs/logo.png" height="100%" width="100%"/>
+	</div>
+	<div class="modal-text">
+		<span class="modal-title">ОТЛИЧНО</span>
+		<span id="modal-text">
+			Товар <span id="modal-title"></span>
+			успешно добавлен в корзину!
+		</span>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -77,19 +87,19 @@
 	<div class="filter-buttons-container">
 		<div class="filters-container">
 			<select name="Filter" onchange="change_catalog()">
-				<option value="DOWN2UP_PRICE">
+				<option class="option-value" value="DOWN2UP_PRICE">
 					По возрастанию цены
 				</option>
-				<option value="UP2DOWN_PRICE">
+				<option class="option-value" value="UP2DOWN_PRICE">
 					По убыванию цены
 				</option>
-				<option value="UP2DOWN_TITLE">
+				<option class="option-value" value="UP2DOWN_TITLE">
 					По названию (А - Я)
 				</option>
-				<option value="DOWN2UP_TITLE">
+				<option class="option-value" value="DOWN2UP_TITLE">
 					По названию (Я - А)
 				</option>
-				<option value="ALL" selected>
+				<option class="option-value" value="ALL" selected>
 					По умолчанию
 				</option>
 			</select>
@@ -162,10 +172,10 @@
 						@{
 							if (ViewBag.carts.Contains(item.Id))
 							{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В корзине</button>
+								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В корзине</button>
 							} else
 							{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В корзину</button>
+								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В корзину</button>
 							}
 						}
 					</form>

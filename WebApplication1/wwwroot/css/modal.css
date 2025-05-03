@@ -1,0 +1,139 @@
+@media (max-width: 600px) { /* MOBILE STYLES */
+    #cart-modal {
+        width: 60vw;
+        min-height: 4vh;
+        position: fixed;
+        z-index: 5;
+        padding: 1vw;
+        top: -20vh;
+        left: 20vw;
+        background-color: #FFFFFF;
+        font-size: 2.5vw;
+        font-weight: 600;
+        text-align: center;
+        border: 0.5vw solid transparent;
+        border-radius: 1.4vw;
+    }
+
+    .modal-image {
+        width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .modal-text {
+        font-weight: 600;
+        font-size: 3vw;
+    }
+
+    .modal-title {
+        display: block;
+        font-weight: 900;
+        font-size: 5vw;
+        color: #b30016;
+    }
+
+    .animate-modal {
+        animation: modalView 3s;
+    }
+
+    @keyframes modalView {
+        0% {
+            top: -20vh;
+        }
+
+        20% {
+            top: 12vh;
+        }
+
+        80% {
+            top: 12vh;
+        }
+
+        100% {
+            top: -20vh;
+        }
+    }
+
+    #close-modal {
+        position: absolute;
+        top: 1vh;
+        right: .9vw;
+        border: none;
+        background: none;
+    }
+}
+
+
+@media (min-width: 600px) { /* DESKTOP STYLES */
+    #cart-modal, #error-modal {
+        width: 40vw;
+        height: 25vh;
+        position: fixed;
+        z-index: 5;
+        padding: 1vw;
+        top: -30vh;
+        left: 30vw;
+        background-color: #FFFFFF;
+        font-size: 1.2vw;
+        font-weight: 600;
+        text-align: center;
+        border: 0.2vw solid #DFDFDF;
+        border-radius: 1.4vw;
+    }
+
+    #error-modal {
+        position: relative;
+        top: 5vh;
+        
+    }
+
+    .modal-image {
+        width: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .modal-text {
+        font-weight: 600;
+    }
+
+    .modal-title {
+        display: block;
+        font-weight: 900;
+        font-size: 2vw;
+        color: #b30016;
+
+    }
+
+    .animate-modal {
+        animation: modalView 3s;
+    }
+
+    @keyframes modalView {
+        0% {
+            top: -30vh;
+        }
+
+        20% {
+            top: 10vh;
+        }
+
+        80% {
+            top: 10vh;
+        }
+
+        100% {
+            top: -30vh;
+        }
+    }
+}
+#close-modal {
+    position: absolute;
+    top: 1vh;
+    right: .9vw;
+    border: none;
+    background: none;
+}
+}

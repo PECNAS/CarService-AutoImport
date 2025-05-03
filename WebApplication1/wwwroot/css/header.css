@@ -28,7 +28,7 @@
 }
 
 body {
-	background-color: #F7F7F7;
+	background-color: #F0F0F0;
 }
 
 button:hover {
@@ -396,8 +396,11 @@ button:hover {
 }
 
 .logo-container {
-	width: 20vw;
-	margin-left: 10vw;
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 80%;
+	width: 15vw;
+	margin-left: 3vw;
 }
 
 .searcher-container {

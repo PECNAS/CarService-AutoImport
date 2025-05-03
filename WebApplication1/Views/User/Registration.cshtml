@@ -5,6 +5,7 @@
 @model ViewModels.RegModel;
 
 <link href="~/css/login.css" rel="stylesheet" />
+<link href="~/css/modal.css" rel="stylesheet" />
 
 <script type="text/javascript">
 	function close_modal() {
@@ -29,7 +30,15 @@
 {
 	<div id="modal-shadow">
 		<div id="error-modal">
-			<span>@Html.ValidationMessageFor(Model => Model.Email)</span>
+			<div class="modal-image">
+				<img src="~/imgs/logo.png" height="100%" width="100%" />
+			</div>
+			<div class="modal-text">
+				<span class="modal-title">ОТЛИЧНО</span>
+				<span id="modal-text">
+					@Html.ValidationMessageFor(Model => Model.Email)
+				</span>
+			</div>
 			<button onclick="close_modal()" id="close-modal">X</button>
 		</div>
 	</div>
