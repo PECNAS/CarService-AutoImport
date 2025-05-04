@@ -35,7 +35,7 @@ button:hover {
 	cursor: pointer;
 }
 
-@media (max-width: 600px) { /*MOBILE STYLES*/
+@media (max-width: 1000px) { /*MOBILE STYLES*/
 	#header {
 		display: none;
 	}
@@ -44,7 +44,6 @@ button:hover {
 		width: 100vw;
 		min-height: 7vh;
 		display: flex;
-		box-shadow: -.6vw .8vw 1.8vw #989898;
 		position: fixed;
 		top: 0;
 		background-color: #FFFFFF;
@@ -143,17 +142,17 @@ button:hover {
 	}
 
 	.mobile-logo {
-		width: 40vw;
+		width: 15vw;
 		margin-left: auto;
-		margin-top: 1vh;
+		margin-right: 7vw
 	}
 
 	.searcher-container {
-		width: 35vw;
+		width: 30vw;
 		height: 3vh;
 		margin-top: 2.5vh;
 
-		margin-left: 3vw;
+		margin-left: 8vw;
 		display: flex;
 		flex-wrap: wrap;
 		form {
@@ -164,7 +163,7 @@ button:hover {
 
 	#searcher {
 		display: block;
-		width: 30vw;
+		width: 25vw;
 		height: 100%;
 
 		padding-left: 1vw;
@@ -320,14 +319,23 @@ button:hover {
 
 .res-text-container {
 	width: 48vw;
+	width: 100%;
 }
+
+/*
+	.res-title-container {
+	width: 100%;
+	font-size: 5vw;
+	font-weight: 600;
+}
+	*/
 
 .res-title-container {
 	width: 100%;
 	font-size: 5vw;
 	font-weight: 600;
+	text-align: center;
 }
-
 .res-price-container {
 	width: 100%;
 	font-size: 4vw;
@@ -361,14 +369,13 @@ button:hover {
 
 
 
-@media (min-width: 600px) {/*DESKTOP STYLES*/
+@media (min-width: 1000px) {/*DESKTOP STYLES*/
 
 #mobile-header { display: none;}
 
 #header {
-	height: 12vh;
+	max-height: 12vh;
 	display: flex;
-	box-shadow: .5vw .5vw .45vw #D0D0D0;
 
 	background-color: #FFFFFF;
 
@@ -396,10 +403,9 @@ button:hover {
 }
 
 .logo-container {
-	margin-top: auto;
-	margin-bottom: auto;
-	height: 80%;
-	width: 15vw;
+	
+	height: 100%;
+	width: 10vw;
 	margin-left: 3vw;
 }
 
@@ -417,13 +423,13 @@ button:hover {
 	width: 20vw;
 	height: 2.1vw;
 	padding-left: 1vw;
-	border: 0.2vw solid #9A0300;
+	border: 0.25vw solid #9A0300;
 	border-right: none;
 }
 
 #search-button {
 	width: 2.8vw;
-	border: 0.2vw solid #9A0300;
+	border: 0.25vw solid #9A0300;
 	border-left: none;
 	background-color: #ffffff;
 	color: white;
@@ -474,7 +480,7 @@ button:hover {
 
 #footer {
 	width: 100%;
-	min-height: 35vh;
+	min-height: 20vh;
 	margin-top: 3vh;
 	padding-top: 3vh;
 	display: flex;
@@ -536,7 +542,8 @@ button:hover {
 
 
 .footer-logo {
-	width: 30vw;
+	width: 15vw;
+	height: 15vw;
 	margin-left: auto;
 	margin-right: 3vw;
 	justify-content: right;
@@ -568,7 +575,7 @@ button:hover {
 	position: absolute;
 	background-color: #FFFFFF;
 	width: 20vw;
-	height: 50vh;
+	max-height: 50vh;
 	right: 2.95vw;
 	top: 13vh;
 	z-index: 6;
@@ -599,6 +606,12 @@ button:hover {
 	margin-right: auto;
 	margin-bottom: 2vh;
 	display: flex;
+	transition: .2s all;
+}
+
+.search-result:hover {
+	background-color: #EAEAEA;
+	border-radius: .4vw;
 }
 
 .res-img-container {
@@ -609,12 +622,15 @@ button:hover {
 
 .res-text-container {
 	width: 10vw;
+	width: 100%;
 }
 
 .res-title-container {
 	width: 100%;
 	font-size: 1.2vw;
 	font-weight: 400;
+	text-align: center;
+	justify-content: center;
 }
 
 .res-price-container {
@@ -625,3 +641,4 @@ button:hover {
 
 
 }
+

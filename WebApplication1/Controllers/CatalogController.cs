@@ -269,7 +269,36 @@ namespace WebApplication1.Controllers
         public object AsyncFinder(string query)
         {
             var items = db.Items.Where(i => i.Title.ToLower().Contains(query)).ToList();
-            return new { Items = items };
+            var res_items = new List<Item>();
+            foreach(var item in items)
+            {
+                if (res_items.Where(i => i.Title == item.Title).Count() == 0)
+                {
+                    res_items.Add(item);
+                }
+            }
+
+            return new { Items = res_items};
         }
+
+		[HttpGet]
+		public IActionResult RedirectToQuery(string query)
+		{
+			if (query != null)
+			{
+				List<Item> items = db.Items.Where(i => i.Title
+				.ToLower()
+				.Contains(
+					query.ToLower())
+				).ToList();
+				return Index(items);
+			}
+			else
+			{
+				return new NoContentResult();
+			}
+
+			//return PartialView("ItemsCatalog", items);
+		}
 	}
 }

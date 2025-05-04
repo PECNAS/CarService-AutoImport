@@ -19,18 +19,18 @@ async function AddItemToSearcherList(query) {
 
     data["items"].forEach((el) => {
         result_list.innerHTML += '<li class="result">' +
-            '    <a href="/Catalog/ItemDetail/' + el["id"] + '">' +
+            '    <a href="/Catalog/RedirectToQuery?query=' + el["title"] + '">' +
             '        <div class="search-result">' +
-            '            <div class="res-img-container">' +
-            '                <img class="res-img" src="/imgs/' + el["image"] + '" width="100%" height="100%"/>' +
-            '            </div>' +
+            //'            <div class="res-img-container">' +
+            //'                <img class="res-img" src="/imgs/' + el["image"] + '" width="100%" height="100%"/>' +
+            //'            </div>' +
             '            <div class="res-text-container">' +
             '                <div class="res-title-container">' +
             '                    <span class="res-title">' + el["title"] + '</span>' +
             '                </div>' +
-            '                <div class="res-price-container">' +
-            '                    <span class="res-price">' + el["price"] + " руб.</span>" +
-            '                </div>' +
+            //'                <div class="res-price-container">' +
+            //'                    <span class="res-price">' + el["price"] + " руб.</span>" +
+            //'                </div>' +
             '            </div>' +
             '        </div>' +
             '    </a>' +

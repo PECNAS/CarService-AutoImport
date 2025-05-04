@@ -9,13 +9,13 @@ body {
 	background-color: #7E7E7E;
 }
 
-@media (max-width: 600px) {  /* MOBILE STYLES */
+@media (max-width: 1000px) {  /* MOBILE STYLES */
 	#content {
 		width: 80vw;
 		min-height: 80vh;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 10vh;
+		margin-top: 15vh;
 		font-family: "Montserrat";
 	}
 
@@ -77,7 +77,7 @@ body {
 
 	.item-card {
 		width: 35vw;
-		height: 36vh;
+		min-height: 36vh;
 		margin: 0vw 1vw 0vw 1vw;
 		margin-bottom: 3vw;
 		background-color: #FFFFFF;
@@ -198,7 +198,7 @@ body {
 
 
 
-@media (min-width: 600px) { /* DESKTOP STYLES */
+@media (min-width: 1000px) { /* DESKTOP STYLES */
 
 	#content {
 		width: 80vw;
@@ -226,7 +226,7 @@ body {
 		padding: 0vh .4vw;
 		margin-bottom: 1vh;
 		margin-right: .4vw;
-		border: 0.14vw solid #242425;
+		border: 0.25vw solid #242425;
 		/*border-radius: 1.2vw;*/
 		font-weight: 600;
 		font-size: 1vw;
@@ -260,7 +260,7 @@ body {
 		background: none;
 		color: #FFFFFF;
 		outline: none;
-		border: .1vw solid #FFFFFF;
+		border: .15vw solid #FFFFFF;
 		height: 100%;
 		width: 100%;
 		/*border-radius: 1.2vw;*/
@@ -286,13 +286,16 @@ body {
 
 	.item-card {
 		width: 14vw;
-		height: 42vh;
+		max-height: 42vh;
 
 		margin: 0vw 1vw 0vw 1vw;
 		margin-bottom: 3vw;
 
 		background-color: #FFFFFF;
-		border-radius: 1.4vw;
+		border-radius: .7vw;
+
+		position: relative;
+		padding-bottom: 8vh;
 	
 	}
 
@@ -327,7 +330,7 @@ body {
 
 	.item-image {
 		width: 8vw;
-		height: 16vh;
+		max-height: 16vh;
 
 		margin: 2vh auto 2vh auto;
 	}
@@ -357,6 +360,7 @@ body {
 	}
 
 	.item-price {
+		height: 2vh;
 		width: 10vw;
 		margin-left: auto;
 		margin-right: auto;
@@ -367,18 +371,18 @@ body {
 
 	.item-btns {
 		width: 100%;
-		height: 100%;
-		position: relative;
-		bottom: -2vh;
+		position: absolute;
+		bottom: 0px;
+		
 	}
 
 	.item-btn {
 		width: 100%;
 		min-height: 6.4vh;
 	
-		border-radius: 0vw 0vw 1.4vw 1.4vw;
+		border-radius: 0vw 0vw .7vw .7vw;
 		font-size: 1vw;
-		margin-bottom: 1vh;
+		
 		color: #FFFFFF;
 		font-weight: 500;
 		outline: none;
@@ -406,41 +410,6 @@ body {
 		color: white;
 	}
 
-	#cart-modal {
-		width: 40vw;
-		height: 8vh;
-		position: fixed;
-		z-index: 5;
-
-		padding: 1vw;
-		top: -10vh;
-		left: 30vw;
-		background-color: #FFFFFF;
-		font-size: 1.2vw;
-		font-weight: 600;
-		text-align: center;
-		border: 0.2vw solid #DFDFDF;
-		border-radius: 1.4vw;
-	}
-
-	.animate-modal {
-		animation: modalView 3s;
-	}
-
-	@keyframes modalView {
-		0% {
-			top: -10vh;
-		}
-		20% {
-			top: 8vh;
-		}
-		80% {
-			top: 8vh;
-		}
-		100% {
-			top: -10vh;
-		}
-	}
 }
 
 .item-card-clicker {
