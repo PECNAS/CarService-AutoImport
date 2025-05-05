@@ -6,6 +6,12 @@ var psswd = document.querySelector("#Password");
 var phone_number = document.querySelector("#PhoneNumber");
 var name_input = document.querySelector("#Name");
 
+var maskOptions = {
+	mask: '+7 (000) 000 - 00 - 00',
+	lazy: false
+}
+var mask = new IMask(phone_number, maskOptions);
+
 window.email_valid = false;
 window.psswd_valid = false;
 window.phone_valid = false;

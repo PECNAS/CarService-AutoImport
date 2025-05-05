@@ -102,7 +102,12 @@ namespace WebApplication1.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError("Email", "Некорректные логин и(или) пароль");
+                string error = "";
+                user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                if (user != null) error = "Неверный пароль!";
+                else error = "Пользователь с почтой " + model.Email + " не найден";
+
+                ModelState.AddModelError("Email", error);
             }
 			ViewBag.IsValid = false;
 			return View(model);
@@ -138,7 +143,17 @@ namespace WebApplication1.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("Email", "Некорректные логин и(или) пароль");
+                {
+                    string error = "";
+
+                    user = await db.Users.FirstOrDefaultAsync(u => u.PhoneNumber == model.PhoneNumber);
+                    if (user != null) error = "Номер телефона уже занят";
+
+                    user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                    if (user != null) error = "Почта уже занята";
+
+                    ModelState.AddModelError("Email", error);
+                }
             }
             ViewBag.IsValid = false;
             return View(model);

@@ -16,6 +16,14 @@ input {
 }
 
 @media (max-width: 1000px) {
+	.logo-container {
+		position: absolute;
+		top: 0;
+		left: 5vw;
+		width: 20vw;
+		height: 20vw;
+	}
+
 	#modal-shadow {
 		position: absolute;
 		top: 0;
@@ -206,7 +214,13 @@ input {
 }
 
 @media (min-width: 1000px){
-
+	.logo-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 6vw;
+		height: 6vw;
+	}
 
 	body {
 		display: flex;

@@ -485,6 +485,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jQuery-Mask-Plugin-master.zip",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jQuery-Mask-Plugin-master.zip"
+    },
+    {
       "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
@@ -495,6 +499,158 @@
     {
       "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\.gitignore",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\.gitignore"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\.jshintrc",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\.jshintrc"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\.ruby-version",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\.ruby-version"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\.travis.yml",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\.travis.yml"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\CHANGELOG.md"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\CONTRIBUTING.md",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\CONTRIBUTING.md"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\Dockerfile",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\Gruntfile.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\Gruntfile.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\ISSUE_TEMPLATE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\ISSUE_TEMPLATE.md"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\README.md",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\bower.json",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\bower.json"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\component.json",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\component.json"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\composer.json",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\composer.json"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\deploy.rb",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\deploy.rb"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\dist\\jquery.mask.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\dist\\jquery.mask.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\dist\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\dist\\jquery.mask.min.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\docker-compose.yml",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\docker-compose.yml"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\package-lock.json",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\package.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\package.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\package.json",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\src\\jquery.mask.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\src\\jquery.mask.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\jquery.mask.test.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\jquery.mask.test.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\qunit.css",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\qunit.css"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\qunit.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\qunit.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\sinon-1.10.3.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\sinon-1.10.3.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\sinon-qunit-1.0.0.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\sinon-qunit-1.0.0.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\sinon-qunit.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\sinon-qunit.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.11.1.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.11.1.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.7.2.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.7.2.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.8.3.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.8.3.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.9.1.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-1.9.1.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-2.1.1.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-2.1.1.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-3.0.0.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-jquery-3.0.0.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\test-for-zepto.html",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\test-for-zepto.html"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\data.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\data.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\event.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\event.js"
+    },
+    {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\zepto.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquerymask\\test\\zepto\\zepto.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props",

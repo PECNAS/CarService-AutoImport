@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\wwwroot\\js\\searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\user\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,40 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CatalogController.cs",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Controllers\\CatalogController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\CatalogController.cs",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Controllers\\CatalogController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\CatalogController.cs",
-              "ViewState": "AQIAAA4BAAAAAAAAAADwvx4BAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T12:43:52.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACIAAAAAAAAA",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:43:06.037Z",
+              "WhenOpened": "2025-05-05T13:51:24.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "searcher.js",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\searcher.js",
-              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\searcher.js",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\searcher.js",
-              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\searcher.js",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABUAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-04T12:42:55.832Z",
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Registration.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\User\\Registration.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\Registration.cshtml",
+              "ViewState": "AQIAACIAAAAAAAAAAAAYwDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T13:51:24.016Z",
               "EditorCaption": ""
             }
           ]

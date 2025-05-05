@@ -526,7 +526,8 @@
 .user-point-input {
     width: 100%;
     height: 4vh;
-    border: .25vw solid #b30016;
+    /*border: .25vw solid #b30016;*/
+    border: .1vw solid #919191;
     padding-left: 1vw;
 }
 }

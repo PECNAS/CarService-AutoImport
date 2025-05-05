@@ -26,7 +26,7 @@
 		modal.classList = "animate-modal";
 
 		if (fav == null) {
-			document.querySelector("#modal-title").innerHTML = title;
+			//document.querySelector("#modal-title").innerHTML = title;
 			var btn = document.querySelector("#" + btn_id);
 			btn.innerHTML = "В корзине";
 			btn.classList.add("in-cart");
@@ -35,10 +35,10 @@
 
 			if (btn.classList.contains("in-fav")) {
 				btn.classList.remove("in-fav");
-				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> удален из избранного!";
+				document.querySelector("#modal-text").innerHTML = "Товар удален из избранного!";
 			} else {
 				btn.classList.add("in-fav");
-				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> добавлен в избранное!";
+				document.querySelector("#modal-text").innerHTML = "Товар добавлен в избранное!";
 			}
 
 			var new_action = "/Catalog/RemoveFavorites";
@@ -48,10 +48,10 @@
 
 			if (btn.classList.contains("in-fav")) {
 				btn.classList.remove("in-fav");
-				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> удален из избранного!";
+				document.querySelector("#modal-text").innerHTML = "Товар удален из избранного!";
 			} else {
 				btn.classList.add("in-fav");
-				document.querySelector("#modal-text").innerHTML = "Товар <span id='modal-title'>" + title + "</span> добавлен в избранное!";
+				document.querySelector("#modal-text").innerHTML = "Товар добавлен в избранное!";
 			}
 
 			var new_action = "/Catalog/Favorites";
