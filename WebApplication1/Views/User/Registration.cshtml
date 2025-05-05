@@ -34,7 +34,7 @@
 				<img src="~/imgs/logo.png" height="100%" width="100%" />
 			</div>
 			<div class="modal-text">
-				<span class="modal-title">ОТЛИЧНО</span>
+				<span class="modal-title">ВНИМАНИЕ</span>
 				<span id="modal-text">
 					@Html.ValidationMessageFor(Model => Model.Email)
 				</span>
@@ -59,16 +59,16 @@
 		<div class="inputs-container">
 			<form asp-action="Registration" method="post">
 				<div class="input-row">
-					<input type="text" asp-for="Email" placeholder="E-mail">
+					<input autocomplete="off" type="text" asp-for="Email" placeholder="E-mail">
 				</div>
 				<div class="input-row">
-					<input type="text" asp-for="PhoneNumber" placeholder="+7">
+					<input type="text" autocomplete="off" asp-for="PhoneNumber" placeholder="+7">
 				</div>
 				<div class="input-row">
-					<input type="text" asp-for="Name" placeholder="Имя">
+					<input type="text" asp-for="Name" autocomplete="off" placeholder="Имя">
 				</div>
 				<div class="input-row" id="psswd-input">
-					<input type="password" asp-for="Password" placeholder="Пароль">
+					<input type="password" asp-for="Password" autocomplete="off" placeholder="Пароль">
 					<a onclick="view_psswd()" href="#" class="password-control"></a>
 				</div>
 			
@@ -84,3 +84,14 @@
 </div>
 <script src="https://unpkg.com/imask" type="text/javascript"></script>
 <script src="~/js/reg.js" type="text/javascript"></script>
+<script>
+	if ("@ViewBag.IsValid" != "") {
+		window.email_valid = true;
+		window.psswd_valid = false;
+		window.phone_valid = true;
+		window.name_valid = true;
+
+
+
+	}
+</script>

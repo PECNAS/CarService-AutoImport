@@ -44,7 +44,7 @@ function password_check() {
 }
 
 function number_check() {
-	if (phone_number.value.startsWith("+7") && phone_number.value.length == 12) {
+	if (phone_number.value.startsWith("+7") && phone_number.value.length == 22) {
 		window.phone_valid = true;
 	} else {
 		window.phone_valid = false;

@@ -35,7 +35,7 @@
 
             <form asp-action="Finder" asp-controller="Catalog" method="post">
                 <div class="searcher-container">
-                    <input name="query" type="text" id="searcher">
+                    <input autocomplete="off" name="query" type="text" id="searcher">
                     <button type="submit" id="search-button"></button>
                 </div>
             </form>
@@ -49,7 +49,7 @@
         </div>
         <div id="mobile-header">
             <div class="menu">
-                <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                <input autocomplete="off" type="checkbox" id="burger-checkbox" class="burger-checkbox">
                 <label for="burger-checkbox" class="burger"></label>
                 <ul class="menu-list">
                     <li>
@@ -71,7 +71,7 @@
             </div>
             <div class="searcher-container">
                 <form width="100%" height="100%" asp-action="Finder" asp-controller="Catalog" method="post">
-                    <input name="query" type="text" id="searcher">
+                    <input autocomplete="off" name="query" type="text" id="searcher">
                     <!--<button type="submit" id="search-button"><b>Найти</b></button>-->
                     <button type="submit" id="search-button"></button>
                 </form>

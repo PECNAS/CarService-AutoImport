@@ -4,7 +4,7 @@
 }
 
 #content {
-    width: 100%; 
+    width: 100%;
     height: 100%;
 }
 
@@ -36,15 +36,14 @@
     margin-bottom: 4vh;
 }
 
-.about-desc p {
-    text-indent: 1vw;
-}
+    .about-desc p {
+        text-indent: 1vw;
+    }
 
 .about-map-container {
     width: 40vw;
     max-height: 60vh;
     margin-left: auto;
-    
     margin-bottom: 2vh;
 }
 
@@ -82,11 +81,10 @@ iframe {
     border-right: 1px solid white;
 }
 
-.advantage:last-child {
-    border: none;
-    margin-right: 0;
-    
-}
+    .advantage:last-child {
+        border: none;
+        margin-right: 0;
+    }
 
 .advantage-img {
     width: 100%;
@@ -96,10 +94,9 @@ iframe {
     justify-content: center;
 }
 
-.advantage-img img {
-    width: 6vw;
-    
-}
+    .advantage-img img {
+        width: 6vw;
+    }
 
 .advantage-text {
     width: 80%;
@@ -111,11 +108,11 @@ iframe {
     margin-right: auto;
 }
 
-.advantage-text span {
-    font-size: 1.4vw;
-    font-weight: 500;
-    color: white;
-}
+    .advantage-text span {
+        font-size: 1.4vw;
+        font-weight: 500;
+        color: white;
+    }
 
 .more-info-container {
     width: 100%;
@@ -138,7 +135,6 @@ iframe {
     margin-left: auto;
     margin-right: auto;
     color: white;
-
 }
 
 .more-info-item {
@@ -151,11 +147,30 @@ iframe {
     width: 100%;
     height: 100%;
     font-size: 2.8vh;
-
+    list-style: none; /* Скрываем стандартную стрелку */
+    position: relative; /* Для позиционирования кастомной стрелки */
+    padding-right: 3vw;
     border-bottom: 1px solid white;
     padding-bottom: 2vh;
     padding-left: 1vw;
-    
+}
+
+    .more-info-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .more-info-summary::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='white' stroke-width='2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2vh;
+        transition: transform 0.3s;
+    }
+
+details[open] .more-info-summary::after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='white' stroke-width='2' d='M1 7l5-5 5 5'/%3E%3C/svg%3E");
 }
 
 /*.more-info-summary::marker {
@@ -166,11 +181,13 @@ iframe {
 .more-info-content {
     width: 100%;
     padding-top: 2vh;
-    
-    p {
-          text-indent: 1vw;
-          font-size: 2.2vh;
-      }
+    p
+
+{
+    text-indent: 1vw;
+    font-size: 2.2vh;
+}
+
 }
 
 @media (max-width: 1000px) {
@@ -197,6 +214,7 @@ iframe {
         font-size: 5vw;
         font-weight: 700;
     }
+
     .advs-section {
         display: block;
         margin-bottom: 0;
@@ -210,6 +228,9 @@ iframe {
         min-height: 15vh;
     }
 
+
+
+
     .advantage-img {
         width: 20vw;
         height: 10vh;
@@ -217,22 +238,21 @@ iframe {
         margin-right: auto;
     }
 
-    .advantage-img img {
-        width: 100%;
-        height: 100%;
-    }
+        .advantage-img img {
+            width: 100%;
+            height: 100%;
+        }
 
     .advantage-text {
         width: 100%;
-
         margin: 0;
         padding: 0;
         text-align: center;
     }
 
-    .advantage-text span{
-        font-size: 4vw;
-    }
+        .advantage-text span {
+            font-size: 4vw;
+        }
 
 
     .more-info-container {
@@ -251,11 +271,11 @@ iframe {
         font-weight: 600;
     }
 
-    .more-info-content p{
+    .more-info-content p {
         font-size: 4vw;
     }
 
-    
+
     .about-section {
         width: 100%;
         height: 100%;
@@ -287,9 +307,9 @@ iframe {
         margin-bottom: 4vh;
     }
 
-    .about-desc p {
-        text-indent: 1vw;
-    }
+        .about-desc p {
+            text-indent: 1vw;
+        }
 
     .about-map-container {
         width: 90vw;

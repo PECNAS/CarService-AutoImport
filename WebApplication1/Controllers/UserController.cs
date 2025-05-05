@@ -95,12 +95,15 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == Models.User.GetHashString(model.Password));
+                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user != null)
                 {
-                    await Authenticate(model.Email); // аутентификация
+                    if (Models.User.VerifyPassword(model.Password, user.Password))
+                    {
+                        await Authenticate(model.Email); // аутентификация
 
-                    return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 string error = "";
                 user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
@@ -132,7 +135,7 @@ namespace WebApplication1.Controllers
                     db.Users.Add(
                         new User {
                             Email = model.Email,
-                            Password = Models.User.GetHashString(model.Password),
+                            Password = Models.User.HashPassword(model.Password),
                             PhoneNumber = model.PhoneNumber,
                             Name = model.Name
                         });
