@@ -10,6 +10,18 @@ body {
 }
 
 @media (max-width: 1000px) {  /* MOBILE STYLES */
+	.empty-cart {
+		width: 80vw;
+		text-align: center;
+		font-size: 5vw;
+		font-weight: 400;
+		border-radius: 1.8vw;
+		padding-top: 4vh;
+		padding-bottom: 4vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	#content {
 		width: 80vw;
 		min-height: 80vh;
@@ -202,6 +214,20 @@ body {
 
 
 @media (min-width: 1000px) { /* DESKTOP STYLES */
+	.empty-cart {
+		position: absolute;
+		top: 30vh;
+		left: 20vw;
+		width: 60vw;
+		text-align: center;
+		font-size: 2vw;
+		font-weight: 400;
+		border-radius: 1.8vw;
+		padding-top: 4vh;
+		padding-bottom: 4vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	#content {
 		width: 80vw;

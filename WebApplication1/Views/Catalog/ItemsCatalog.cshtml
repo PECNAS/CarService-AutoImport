@@ -124,6 +124,14 @@
 			}
 		</div>
 	</div>
+
+	@if (ViewBag.items.Count == 0)
+	{
+		<div class="empty-cart">
+			<span>Товары не найдены</span>
+		</div>
+	}
+
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
 		{

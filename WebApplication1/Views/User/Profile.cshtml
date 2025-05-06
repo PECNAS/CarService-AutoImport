@@ -33,6 +33,12 @@
     </div>
     <div class="items-container">
         <div class="items-card">
+            @if (ViewBag.orders.Count == 0)
+            {
+                <div class="empty-orders">
+                    <span>Нет заказов</span>
+                </div>
+            }
             <ul>
                 @for (int i = 0; i < ViewBag.orders.Count; i++)
                 {
@@ -52,27 +58,27 @@
                                     if (status == "ORDERED")
                                     {
                                         <div class="buy-status success">
-                                            <span>Оформлен</span>
+                                            <span>ОФОРМЛЕН</span>
                                         </div>
                                     } else if (status == "ON_THE_WAY")
                                     {
                                         <div class="buy-status waiting">
-                                            <span>В пути</span>
+                                            <span>В ПУТИ</span>
                                         </div>
                                     } else if (status == "DELIVERED")
                                     {
                                         <div class="buy-status success">
-                                            <span>Доставлен</span>
+                                            <span>ДОСТАВЛЕН</span>
                                         </div>
                                     } else if (status == "RECEIVED")
                                     {
                                         <div class="buy-status success">
-                                            <span>Получен</span>
+                                            <span>ПОЛУЧЕН</span>
                                         </div>
                                     } else if (status == "CANCELLED")
                                     {
                                         <div class="buy-status cancelled">
-                                            <span>Отменён</span>
+                                            <span>ОТМЕНЁН</span>
                                         </div>
                                     }
                                 }

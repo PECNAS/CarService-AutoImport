@@ -74,6 +74,13 @@
 
 </script>
 <div id="content">
+	@if (ViewBag.items.Count == 0)
+	{
+		<div class="empty-cart">
+			<span>Вы пока еще не добавили ничего в корзину</span>
+		</div>
+	}
+
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
 		{

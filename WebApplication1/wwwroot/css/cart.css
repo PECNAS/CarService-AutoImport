@@ -239,7 +239,7 @@
     text-align: center;
     font-size: 5vw;
     font-weight: 600;
-    border: .8vw solid red;
+    /*border: .8vw solid red;*/
     border-radius: 1.8vw;
     padding-top: 4vh;
     padding-bottom: 4vh;
@@ -495,21 +495,18 @@
         height: .8vw;
     }
 
-    .empty-cart {
-        width: 60vw;
-
-        text-align: center;
-        font-size: 2vw;
-        font-weight: 600;
-
-        border: .15vw solid red;
-        border-radius: 1.8vw;
-    
-        padding-top: 4vh;
-        padding-bottom: 4vh;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.empty-cart {
+    width: 60vw;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 400;
+    /*border: .15vw solid red;*/
+    border-radius: 1.8vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+}
 
     .user-point {
         width: 100%;
