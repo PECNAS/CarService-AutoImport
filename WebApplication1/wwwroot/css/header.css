@@ -173,6 +173,10 @@ button:hover {
 		/*border-radius: 1.2vw 0vw 0vw 1.2vw;*/
 	}
 
+	#searcher:focus, #searcher:active {
+		outline: none;
+	}
+
 #search-button {
 	width: 5vw;
 	height: 100%;
@@ -278,9 +282,9 @@ button:hover {
 #searcher-results {
 	position: absolute;
 	background-color: #FFFFFF;
-	width: 80vw;
-	height: 50vh;
-	left: 10vw;
+	width: 40vw;
+	max-height: 50vh;
+	left: 25vw;
 	top: 9vh;
 	z-index: 6;
 	box-shadow: -.2vw .4vw 1vw #989898;
@@ -332,9 +336,9 @@ button:hover {
 
 .res-title-container {
 	width: 100%;
-	font-size: 5vw;
+	font-size: 3vw;
 	font-weight: 600;
-	text-align: center;
+	text-align: left;
 }
 .res-price-container {
 	width: 100%;
@@ -385,6 +389,11 @@ button:hover {
 	a {
 		text-decoration: none;
 		color: black;
+		transition: .15s all;
+	}
+
+	a:hover {
+		color: #b30016;
 	}
 }
 
@@ -407,6 +416,7 @@ button:hover {
 	height: 100%;
 	width: 10vw;
 	margin-left: 3vw;
+	margin-top: -1.3vh;
 }
 
 .searcher-container {
@@ -421,11 +431,15 @@ button:hover {
 
 #searcher {
 	width: 20vw;
-	height: 2.1vw;
+	height: 2.4vw;
 	padding-left: 1vw;
 	border: 0.25vw solid #9A0300;
 	border-right: none;
 }
+
+	#searcher:focus, #searcher:active {
+		outline: none;
+	}
 
 #search-button {
 	width: 2.8vw;
@@ -629,7 +643,7 @@ button:hover {
 	width: 100%;
 	font-size: 1.2vw;
 	font-weight: 400;
-	text-align: center;
+	text-align: left;
 	justify-content: center;
 }
 

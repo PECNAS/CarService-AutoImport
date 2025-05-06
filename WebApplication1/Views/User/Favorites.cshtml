@@ -2,9 +2,77 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Избранное";
 }
+@model ViewModels.BuyModel;
 
 <link rel="stylesheet" href="~/css/catalog.css"/>
 <link rel="stylesheet" href="~/css/favorites.css"/>
+<link rel="stylesheet" href="~/css/modal.css">
+
+<div id="cart-modal">
+	<div class="modal-image">
+		<img src="~/imgs/logo.png" height="100%" width="100%" />
+	</div>
+	<div class="modal-text">
+		<span class="modal-title">ОТЛИЧНО</span>
+		<span id="modal-text">
+			Товар <span id="modal-title"></span>
+			успешно добавлен в корзину!
+		</span>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function show_modal(title, btn_id, fav = null) {
+		var modal = document.querySelector("#cart-modal");
+		modal.classList = "animate-modal";
+		var new_action = "";
+
+		if (fav == null) {
+			//document.querySelector("#modal-title").innerHTML = title;
+			var btn = document.querySelector("#" + btn_id);
+			btn.innerHTML = "В корзине";
+			btn.classList.add("in-cart");
+		} else if (fav == true) {
+			var btn = document.querySelector("#" + btn_id);
+
+			if (btn.classList.contains("in-fav")) {
+				btn.classList.remove("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар удален из избранного!";
+			} else {
+				btn.classList.add("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар добавлен в избранное!";
+			}
+
+			new_action = "/Catalog/RemoveFavorites";
+
+		} else if (fav == false) {
+			var btn = document.querySelector("#" + btn_id);
+
+			if (btn.classList.contains("in-fav")) {
+				btn.classList.remove("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар удален из избранного!";
+			} else {
+				btn.classList.add("in-fav");
+				document.querySelector("#modal-text").innerHTML = "Товар добавлен в избранное!";
+			}
+
+			new_action = "/Catalog/Favorites";
+		}
+
+
+		setTimeout(
+			() => {
+				modal.classList = "";
+				if (fav != null) {
+					var form = document.querySelector("#fav-form-" + btn_id.split('-')[1]);
+					form.setAttribute("action", new_action);
+				}
+			},
+			3 * 1000
+		);
+	}
+
+</script>
 <div id="content">
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
@@ -32,9 +100,23 @@
 					<span>@item.Price руб.</span>
 				</div>
 				<div class="item-btns">
-					<a href="/Catalog/ItemDetail/@item.Id">
-						<button class="item-btn show-item">Посмотреть товар</button>
-					</a>
+					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
+						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
+						<input asp-for="Counter" value="1" style="display: none;" />
+						@{
+							if (ViewBag.carts.Contains(item.Id))
+							{
+								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+							}
+							else
+							{
+								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+							}
+						}
+					</form>
+					<!--<a href="/Catalog/ItemDetail/@item.Id">
+						<button class="item-btn show-item">ПОСМОТРЕТЬ ТОВАР</button>
+					</a>-->
 				</div>
 			</div>
 		}

@@ -79,7 +79,7 @@ input {
 		height: 4vh;
 		text-align: center;
 		font-weight: 600;
-		font-size: 5vw;
+		font-size: 6vw;
 	}
 
 	.input-row {
@@ -163,10 +163,11 @@ input {
 
 	.btn-container {
 		width: 50vw;
-		height: 4vh;
+		height: 4.8vh;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
+		margin-top: 4vh;
 	}
 
 		.btn-container button {
@@ -179,6 +180,8 @@ input {
 			background-color:#b30016;
 			color: white;
 			transition: .3s all;
+
+			font-weight: 600;
 		}
 
 			.btn-container button:hover {
@@ -296,7 +299,8 @@ input {
 
 	text-align: center;
 	font-weight: 600;
-	font-size: 2vw;
+	font-size: 3vw;
+	text-align: center;
 }
 
 .input-row {
@@ -348,14 +352,14 @@ input {
 #Email {
 	background: url("../imgs/email.png") no-repeat;
 	background-size: 1.25vw;
-	background-position: 3.1vw center;
+	background-position: 1.1vw center;
 	/*background-color: #EAEAEA;*/
 }
 
 #Password {
 	background: url("../imgs/psswd.png") no-repeat;
 	background-size: 1.3vw;
-	background-position: 3.15vw center;
+	background-position: 1.15vw center;
 	/*background-color: #EAEAEA;*/
 }
 
@@ -381,14 +385,14 @@ input {
 #PhoneNumber {
 	background: url("../imgs/phone.png") no-repeat;
 	background-size: 1.2vw;
-	background-position: 3.1vw center;
+	background-position: 1.1vw center;
 	/*background-color: #EAEAEA;*/
 }
 
 #Name {
 	background: url("../imgs/human.png") no-repeat;
 	background-size: 1.6vw;
-	background-position: 3vw center;
+	background-position: 1vw center;
 	/*background-color: #EAEAEA;*/
 }
 
@@ -401,7 +405,7 @@ input {
 
 .btn-container {
 	width: 13vw;
-	height: 4vh;
+	height: 4.8vh;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -424,6 +428,8 @@ input {
 	*/
 	background-color: #b30016;
 	color: white;
+
+	font-weight: 600;
 
 	transition: .3s all;
 }

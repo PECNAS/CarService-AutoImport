@@ -24,13 +24,13 @@
 	.info-container {
 		width: 30vw;
 		height: 100%;
-		margin-top: 5.5vh;
+		margin-top: .5vh;
 		margin-left: 10vw;
 	}
 
 	.name-container {
 		width: 100%;
-		min-height: 10vh;
+		min-height: 4vh;
 		font-size: 4vw;
 		font-weight: 600;
 	}
@@ -189,7 +189,7 @@
 	.exit-profile {
 		width: 100%;
 		display: inline-block;
-		margin-left: 6vw;
+		
 		color: #000000;
 		font-size: 3vw;
 		font-weight: 500;
@@ -419,7 +419,7 @@
 	.exit-profile {
 		display: inline-block;
 		margin-top: 3vh;
-		margin-left: 4vw;
+		
 		color: #000000;
 		font-size: 1vw;
 		font-weight: 500;

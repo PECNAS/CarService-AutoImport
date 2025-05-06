@@ -260,7 +260,7 @@
 	}
 
 	#counter {
-		width: 2.1vw;
+		min-width: 3.1vw;
 		margin-left: -.27vw;
 		margin-right: -.28vw;
 		border-left: none;
@@ -345,4 +345,15 @@
 			top: -10vh;
 		}
 	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input {
+	padding-left: .8vw;
 }

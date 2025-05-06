@@ -44,7 +44,14 @@ function password_check() {
 }
 
 function number_check() {
-	if (phone_number.value.startsWith("+7") && phone_number.value.length == 22) {
+	var val = phone_number.value
+		.replaceAll("_", "")
+		.replaceAll("-", "")
+		.replaceAll("(", "")
+		.replaceAll(")", "")
+		.replaceAll(" ", "");
+	console.log(val.length);
+	if (phone_number.value.startsWith("+7") && val.length == 12) {
 		window.phone_valid = true;
 	} else {
 		window.phone_valid = false;

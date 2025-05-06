@@ -6,9 +6,18 @@
 @model ViewModels.BuyModel;
 
 <link href="~/css/item.css" rel="stylesheet" />
+<link href="~/css/modal.css" rel="stylesheet"/>
 
 <div id="cart-modal">
-	<span>Товар @ViewBag.item.Title успешно добавлен в корзину!</span>
+	<div class="modal-image">
+		<img src="~/imgs/logo.png" height="100%" width="100%" />
+	</div>
+	<div class="modal-text">
+		<span class="modal-title">ОТЛИЧНО</span>
+		<span id="modal-text">
+			Товар успешно добавлен в корзину!
+		</span>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -51,7 +60,8 @@
 			<div class="upper-container">
 				<div class="counter-container">
 					<button class="counter-btn" id="minus-btn">-</button>
-					<button class="counter-btn" id="counter">1</button>
+					<input type="number" value="1" class="counter-btn" id="counter"/>
+					<!--<button class="counter-btn" id="counter">1</button>-->
 					<button class="counter-btn" id="plus-btn">+</button>
 				</div>
 				<form asp-action="AddToCart" asp-controller="Catalog" method="post">

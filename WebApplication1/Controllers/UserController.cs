@@ -79,7 +79,12 @@ namespace WebApplication1.Controllers
 
 				items.Add(item);
             }
-            ViewBag.items = items;
+			var carts_bag = (from c in db.ShopCarts
+						 where c.UserId == user.UserId &&
+						 c.Ordered == false
+						 select c.ItemId).ToList();
+			ViewBag.carts = carts_bag;
+			ViewBag.items = items;
             return View();
         }
 

@@ -10,6 +10,7 @@ namespace WebApplication1.Controllers
     public class CatalogController : Controller
     {
         DatabaseContext db;
+        private const int DISTANCE = 2;
 
         public CatalogController(DatabaseContext db)
         {
@@ -150,9 +151,9 @@ namespace WebApplication1.Controllers
             if (query != null)
             {
                 List<Item> items = db.Items.Where(i => i.Title
-                .ToLower()
+                
                 .Contains(
-                    query.ToLower())
+                    query)
                 ).ToList();
                 return Index(items);
             } else
@@ -251,32 +252,51 @@ namespace WebApplication1.Controllers
 		[HttpPost]
 		public IActionResult RemoveFavorites(int ItemId, string NeedToRedirect)
 		{
-			User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
-			var item = db.Items.First(i => i.Id == ItemId);
+            try
+            {
+			    User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+			    var item = db.Items.First(i => i.Id == ItemId);
 
-            var fav = db.Favorites.FirstOrDefault(f => f.UserId == user.UserId && f.ItemId == item.Id);
-            db.Favorites.Remove(fav);
-            db.SaveChanges();
+                var fav = db.Favorites.FirstOrDefault(f => f.UserId == user.UserId && f.ItemId == item.Id);
+                db.Favorites.Remove(fav);
+                db.SaveChanges();
 
-            Console.WriteLine($"\n\n\n{NeedToRedirect}\n\n\n");
-            if (NeedToRedirect == "true")
-                return RedirectToAction("Favorites", "User");
-            else
-                return new NoContentResult();
+                Console.WriteLine($"\n\n\n{NeedToRedirect}\n\n\n");
+                if (NeedToRedirect == "true")
+                    return RedirectToAction("Favorites", "User");
+                else
+                    return new NoContentResult();
+            }
+            catch
+            {
+				return new NoContentResult();
+			}
 		}
 
         [HttpGet]
         public object AsyncFinder(string query)
         {
-            var items = db.Items.Where(i => i.Title.ToLower().Contains(query)).ToList();
-            var res_items = new List<Item>();
-            foreach(var item in items)
+			var res_items = new List<Item>();
+            if (query != null)
             {
-                if (res_items.Where(i => i.Title == item.Title).Count() == 0)
+                query = query.ToLower();
+                var items = db.Items.ToList();
+
+                foreach(var item in items)
                 {
-                    res_items.Add(item);
+                    if (
+                            Item.TitleCompare(query, item.Title.ToLower()) <= DISTANCE ||
+                            item.Title
+                            .ToLower()
+                            .Split(" ")
+                            .Any(s => s.Contains(query))
+                        )
+                    {
+					    if (res_items.Where(i => i.Title == item.Title).Count() == 0)
+                            res_items.Add(item);
+                    }
                 }
-            }
+			}
 
             return new { Items = res_items};
         }
@@ -287,9 +307,9 @@ namespace WebApplication1.Controllers
 			if (query != null)
 			{
 				List<Item> items = db.Items.Where(i => i.Title
-				.ToLower()
+				
 				.Contains(
-					query.ToLower())
+					query)
 				).ToList();
 				return Index(items);
 			}
