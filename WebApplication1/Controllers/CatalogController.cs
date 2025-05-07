@@ -284,12 +284,11 @@ namespace WebApplication1.Controllers
 
                 foreach(var item in items)
                 {
-                    if (
-                            Item.TitleCompare(query, item.Title.ToLower()) <= DISTANCE ||
+                    if (Item.TitleCompare(query, item.Title.ToLower()) <= DISTANCE ||
                             item.Title
                             .ToLower()
                             .Split(" ")
-                            .Any(s => s.Contains(query))
+                            .Any(s => s.Contains(query) || Item.TitleCompare(query, s) <= DISTANCE)
                         )
                     {
 					    if (res_items.Where(i => i.Title == item.Title).Count() == 0)

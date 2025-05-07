@@ -30,7 +30,7 @@
 		if (fav == null) {
 			//document.querySelector("#modal-title").innerHTML = title;
 			var btn = document.querySelector("#" + btn_id);
-			btn.innerHTML = "В корзине";
+			btn.innerHTML = "В КОРЗИНЕ";
 			btn.classList.add("in-cart");
 		} else if (fav == true) {
 			var btn = document.querySelector("#" + btn_id);
@@ -77,13 +77,14 @@
 	@if (ViewBag.items.Count == 0)
 	{
 		<div class="empty-cart">
-			<span>Вы пока еще не добавили ничего в корзину</span>
+			<span>Вы пока еще не добавили ничего в избранное</span>
 		</div>
 	}
 
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
 		{
+			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
 			<div class="item-card">
 				<div class="fav-container">
 					<form method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
@@ -126,6 +127,7 @@
 					</a>-->
 				</div>
 			</div>
+			</a>
 		}
 	</div>
 </div>
