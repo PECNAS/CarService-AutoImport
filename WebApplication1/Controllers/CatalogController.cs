@@ -65,6 +65,24 @@ namespace WebApplication1.Controllers
             var item = db.Items.FirstOrDefault(i => i.Id == id);
             ViewBag.item = item;
 
+            User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            if (user != null)
+            {
+                var fav = db.Favorites.FirstOrDefault(f => f.UserId == user.UserId && f.ItemId == item.Id);
+                if (fav != null)
+                {
+                    ViewBag.fav = true;
+                }
+                else
+                {
+                    ViewBag.fav = false;
+                }
+            }
+            else
+            {
+                ViewBag.fav = null;
+            }
+
             return View();
         }
 
@@ -103,6 +121,8 @@ namespace WebApplication1.Controllers
 
                 if (sc == null)
                 {
+                    if (count > item.Count) count = item.Count; // если пытаемся добавить в корзину больше товаров, чем есть - ограничиваем
+
                     ShopCart new_cart = new ShopCart
                     {
                         User = user,
@@ -115,7 +135,7 @@ namespace WebApplication1.Controllers
                 }
                 else
                 {
-                    if (sc.Count < item.Count) sc.Count += count;
+                    if (sc.Count + count <= item.Count) sc.Count += count;
                 }
 
                 db.SaveChanges();

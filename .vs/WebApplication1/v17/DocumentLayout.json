@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\catalog\\itemdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\catalog\\itemdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\wwwroot\\js\\counter_cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\counter_cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\catalog\\itemscatalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\catalog\\itemscatalog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\views\\catalog\\itemdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\catalog\\itemdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|c:\\users\\busov\\documents\\freelance\\carservice\\webapplication1\\webapplication1\\wwwroot\\css\\item.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E51370F3-DC23-4930-A44B-F9615F59220A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\item.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,53 +39,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "counter_cart.js",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\counter_cart.js",
-              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\counter_cart.js",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\counter_cart.js",
-              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\counter_cart.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-09T01:15:41.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ItemDetail.cshtml",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAgwD8AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-09T01:11:39.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ItemsCatalog.cshtml",
-              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemsCatalog.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Catalog\\ItemsCatalog.cshtml",
-              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemsCatalog.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Catalog\\ItemsCatalog.cshtml",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAgwLAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-09T01:10:36.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "CatalogController.cs",
               "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Controllers\\CatalogController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\CatalogController.cs",
               "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Controllers\\CatalogController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\CatalogController.cs",
-              "ViewState": "AQIAAN0AAAAAAAAAAAAWwPUAAAAhAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAWwFAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T01:10:26.747Z",
+              "WhenOpened": "2025-05-09T12:32:57.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "item.css",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\css\\item.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\item.css",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\css\\item.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\item.css",
+              "ViewState": "AQIAALkAAAAAAAAAAAAIwM4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-09T12:14:53.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
+              "ToolTip": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Catalog\\ItemDetail.cshtml",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAAC0AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T12:09:47.194Z",
               "EditorCaption": ""
             }
           ]

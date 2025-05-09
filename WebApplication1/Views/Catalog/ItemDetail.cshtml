@@ -22,6 +22,7 @@
 
 <script type="text/javascript">
 	window.max_count = @ViewBag.item.Count;
+
 	function show_modal() {
 		var modal = document.querySelector("#cart-modal");
 		modal.classList = "animate-modal";
@@ -32,6 +33,19 @@
 			},
 			3 * 1000
 		);
+	}
+
+	function change_fav(state) {
+		var add_form = document.querySelector("#add-fav-form");
+		var remove_form = document.querySelector("#remove-fav-form");
+
+		if (state == true) {
+			add_form.style.display = "none";
+			remove_form.style.display = "block";
+		} else {
+			add_form.style.display = "block";
+			remove_form.style.display = "none";
+		}
 	}
 </script>
 
@@ -44,9 +58,25 @@
 		<div class="right-text-container">
 			<div class="item-title-container">
 				<span>@ViewBag.item.Title</span>
-				<div class="item-articul-container">
-					<span>Артикул: @ViewBag.item.Id</span>
-				</div>
+				@if (ViewBag.fav != null)
+				{
+					<div class="fav-container">
+						<form id="add-fav-form" method="post" asp-action="Favorites" asp-controller="Catalog">
+							<input hidden type="number" name="ItemId" value="@ViewBag.item.Id" />
+							<input hidden type="text" name="NeedToRedirect" value="false" />
+							<button onclick="change_fav(true)" id="fav-btn" type="submit" class="fav">&nbsp;</button>
+						</form>
+
+						<form id="remove-fav-form" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+							<input hidden type="number" name="ItemId" value="@ViewBag.item.Id" />
+							<input hidden type="text" name="NeedToRedirect" value="false" />
+							<button onclick="change_fav(false)" id="fav-btn" type="submit" class="fav in-fav">&nbsp;</button>
+						</form>
+					</div>
+				}
+			</div>
+			<div class="item-articul-container">
+				<span>Артикул: @ViewBag.item.Id</span>
 			</div>
 			<div class="item-type-container">
 				<span>@ViewBag.item.Type</span>
@@ -99,3 +129,15 @@
 
 
 <script src="~/js/counter.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	var add_form = document.querySelector("#add-fav-form");
+	var remove_form = document.querySelector("#remove-fav-form");
+	if ("@ViewBag.fav" == "True") {
+		add_form.style.display = "none";
+		remove_form.style.display = "block";
+	} else {
+		add_form.style.display = "block";
+		remove_form.style.display = "none";
+	}
+</script>

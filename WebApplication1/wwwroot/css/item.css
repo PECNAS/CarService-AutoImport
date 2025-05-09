@@ -204,9 +204,41 @@
 
 	.item-title-container {
 		width: 100%;
-		min-height: 12vh;
-		font-size: 2vw;
+		min-height: 5vh;
+		font-size: 1.7vw;
 		font-weight: 500;
+
+		display: flex;
+	}
+
+	.item-title-container span {
+		width: 100%;
+		height: min-content;
+	}
+
+	.fav-container {
+		width: 1.1vw;
+		height: 1.1vw;
+	}
+
+	.fav {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: none;
+		background-image: url("../imgs/fav.png");
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.fav:hover {
+		cursor: pointer;
+		background-image: url("../imgs/fav-hover.png");
+	}
+
+	.in-fav {
+		background-image: url("../imgs/fav-hover.png");
 	}
 
 	.item-articul-container {
