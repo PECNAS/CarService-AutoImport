@@ -1,4 +1,4 @@
-@media (max-width: 600px) { /* MOBILE STYLES */
+@media (max-width: 1000px) { /* MOBILE STYLES */
 
 	#content {
 		width: 90vw;
@@ -39,6 +39,7 @@
 		width: 100%;
 		height: 100%;
 		margin-top: 5vh;
+		margin-bottom: 2vh;
 	}
 
 	.empty-orders {
@@ -98,7 +99,7 @@
 		padding: .1vw;
 		padding-left: .4vw;
 		padding-right: .4vw;
-		margin-left: 16.2vw;
+		margin-left: 30.2vw;
 	}
 
 	.success {
@@ -168,6 +169,7 @@
 		width: 55vw;
 		height: 100%;
 		display: flex;
+		margin-top: 3vh;
 	}
 
 	.point-logo {
@@ -213,7 +215,7 @@
 
 
 
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
 
 	#content {
 		width: 90vw;
@@ -329,7 +331,7 @@
 		padding-left: .4vw;
 		padding-right: .4vw;
 
-		margin-left: 16.2vw;
+		margin-left: 20.2vw;
 	}
 
 	.success {
@@ -370,7 +372,7 @@
 	}
 
 	.item-title-container {
-		width: 26vw;
+		width: 24vw;
 		height: 100%;
 
 		margin-left: 1.5vw;
@@ -449,4 +451,11 @@
 		.exit-profile:hover {
 			color: #b30016;
 		}
+}
+
+
+a, a:link, a:visited {
+	color: #000000;
+	text-decoration: none;
+	outline: none;
 }

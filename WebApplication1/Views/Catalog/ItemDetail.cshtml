@@ -21,6 +21,7 @@
 </div>
 
 <script type="text/javascript">
+	window.max_count = @ViewBag.item.Count;
 	function show_modal() {
 		var modal = document.querySelector("#cart-modal");
 		modal.classList = "animate-modal";
@@ -58,17 +59,31 @@
 	<div class="user-container">
 		<div class="inner-user-container">
 			<div class="upper-container">
-				<div class="counter-container">
-					<button class="counter-btn" id="minus-btn">-</button>
-					<input type="number" value="1" class="counter-btn" id="counter"/>
-					<!--<button class="counter-btn" id="counter">1</button>-->
-					<button class="counter-btn" id="plus-btn">+</button>
-				</div>
+				@if (ViewBag.item.Count != 0)
+				{
+					<div class="counter-container">
+						<button class="counter-btn" id="minus-btn">-</button>
+						<input type="number" value="1" class="counter-btn" id="counter"/>
+						<!--<button class="counter-btn" id="counter">1</button>-->
+						<button class="counter-btn" id="plus-btn">+</button>
+					</div>
+				} else
+				{
+					<div class="not-available">
+						<span>Товара нет в наличии</span>
+					</div>
+				}
 				<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 					<div class="buy-btn-container">
 						<input type="type" asp-for="ItemId" value="@ViewBag.item.Id" style="display: none;"/>
 						<input type="type" asp-for="Counter" value="1" style="display: none;"/>
-						<button onclick="show_modal()" type="submit">Купить</button>
+						@if (ViewBag.item.Count != 0)
+						{
+							<button onclick="show_modal()" type="submit">Купить</button>
+						} else
+						{
+							<button onclick="show_modal()" type="submit" disabled>Купить</button>
+						}
 					</div>
 				</form>
 			</div>

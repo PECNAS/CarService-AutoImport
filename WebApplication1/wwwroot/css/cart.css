@@ -1,4 +1,5 @@
 
+
 @media (max-width: 600px) { /* MOBILE STYLES */
     #content {
         width: 90vw;
@@ -91,17 +92,47 @@
     font-weight: 500;
 }
 
-.counter-container {
-    width: 100%;
-    min-height: 3vh;;
-    display: flex;
-}
+	.counter-container {
+		margin-left: 2vw;
+		margin-top: .3vw;
+        display: flex;
+	}
+
+	.counter-btn {
+		width: 5vw;
+		height: 5vw;
+		border: .05vw solid #E0E0E0;
+		font-size: 2.5vw;
+		transition: .3s all;
+	}
+
+	#counter {
+		width: 7vw;
+		margin-left: -.27vw;
+		margin-right: -.28vw;
+		border-left: none;
+		border-right: none;
+		background-color: #fff;
+	}
+
+	#minus-btn {
+		border-radius: .45vw 0vw 0vw .45vw;
+	}
+
+	#plus-btn {
+		border-radius: 0vw .45vw .45vw 0vw;
+	}
+
+		#minus-btn:hover, #plus-btn:hover {
+			filter: brightness(.9);
+		}
+
+
 
 .trash-container {
     width: 3vw;
     height: 3vw;
-
-    margin-left: auto;    
+    margin-left: auto;
 }
 
 .item-count {
@@ -175,7 +206,6 @@
     padding-left: .7vw;
     background-color: #F9F9F9;
     box-shadow: -.6vw .8vw 1.8vw #989898;
-    border-radius: 1vw;
     ul
 
 {
@@ -254,7 +284,6 @@
     padding: 1vh 7vw;
     background-color: #FFFFFF;
     box-shadow: -.6vw .8vw 1.8vw #989898;
-    border-radius: 1vw;
 
     font-size: 3vw;
 }
@@ -357,13 +386,44 @@
 
     .counter-container {
         width: 100%;
-        height: 100%;
+        height: 4vh;
         display: flex;
     }
 
+	.counter-btn {
+		width: 2vw;
+		height: 100%;
+		border: .05vw solid #E0E0E0;
+		font-size: 1.5vw;   
+		transition: .3s all;
+	}
+
+#counter {
+    width: 3vw;
+    padding: 0;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    border-left: none;
+    border-right: none;
+    background-color: #fff;
+    font-size: 1.2vw;
+}
+
+	#minus-btn {
+		border-radius: .45vw 0vw 0vw .45vw;
+	}
+	#plus-btn {
+		border-radius: 0vw .45vw .45vw 0vw;
+	}
+	#minus-btn:hover, #plus-btn:hover {
+		filter: brightness(.9);
+	}
+
+
     .trash-container {
-        width: 1vw;
-        height: 1vw;
+        width: 1.3vw;
+        height: 1.3vw;
+        margin-left: 1vw;
     }
 
     .item-count {
@@ -439,7 +499,6 @@
         padding-left: .7vw;
         background-color: #F9F9F9;
         box-shadow: -.6vw .8vw 1.8vw #989898;
-        border-radius: 1vw;
 
         ul {
             width: 104%;
@@ -517,7 +576,6 @@
 
         background-color: #FFFFFF;
         box-shadow: -.6vw .8vw 1.8vw #989898;
-        border-radius: 1vw
     }
 
 .user-point-input {
@@ -533,4 +591,12 @@
 input:focus, input:active {
     text-decoration: none;
     outline: none;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

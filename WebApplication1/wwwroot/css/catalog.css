@@ -68,7 +68,7 @@ body {
 
 
 	.filters-container {
-		width: 30vw;
+		width: 35vw;
 		margin-right: 2vw;
 	}
 
@@ -170,6 +170,17 @@ body {
 		background: #120075;
 		color: #FFFFFF;
 		background: #242425;
+	}
+
+	.not-available {
+		background: #C9C9C9;
+		color: #000000;
+	}
+
+	.item-btn:disabled:hover {
+		transition: none;
+		cursor: default;
+		filter: brightness(1);
 	}
 
 
@@ -441,6 +452,17 @@ body {
 		color: #FFFFFF;
 		background: #242425;
 	}*/
+
+	.not-available {
+		background: #C9C9C9;
+		color: #000000;
+	}
+
+	.item-btn:disabled:hover {
+		transition: none;
+		cursor: default;
+		filter: brightness(1);
+	}
 
 	.item-btn:hover {
 		filter: brightness(.9);

@@ -86,17 +86,19 @@
                             </div>
                             @foreach (Models.Item item in order)
                             {
-                                <div class="item">
-                                    <div class="item-image-container">
-                                        <img src="~/imgs/@item.Image" width="100%" height="100%">
+                                <a href="~/Catalog/ItemDetail/@item.Id">
+                                    <div class="item">
+                                        <div class="item-image-container">
+                                            <img src="~/imgs/@item.Image" width="100%" height="100%">
+                                        </div>
+                                        <div class="item-title-container">
+                                            <span>@item.Title <br />@item.Type</span>
+                                        </div>
+                                        <div class="item-count-container">
+                                            <span>@ViewBag.counts[counter] шт.</span>
+                                        </div>
                                     </div>
-                                    <div class="item-title-container">
-                                        <span>@item.Title <br />@item.Type</span>
-                                    </div>
-                                    <div class="item-count-container">
-                                        <span>@ViewBag.counts[counter] шт.</span>
-                                    </div>
-                                </div>
+                                </a>
                                 counter++;
                             }
                             <div class="price-row">

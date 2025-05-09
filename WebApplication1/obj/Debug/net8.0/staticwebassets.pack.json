@@ -253,6 +253,10 @@
       "PackagePath": "staticwebassets\\js\\counter.js"
     },
     {
+      "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\counter_cart.js",
+      "PackagePath": "staticwebassets\\js\\counter_cart.js"
+    },
+    {
       "Id": "C:\\Users\\busov\\Documents\\freelance\\CarService\\WebApplication1\\WebApplication1\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },

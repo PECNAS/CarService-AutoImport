@@ -68,6 +68,26 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult ChangeCart(int item_id, int val)
+        {
+            User user = db.Users.First(u => u.Email == User.Identity.Name);
+            ShopCart sc = db.ShopCarts.FirstOrDefault(sc => sc.ItemId == item_id && sc.UserId == user.UserId && sc.Ordered == false);
+            Console.Write($"\n\n\n{item_id}\n\n{val}\n\n\n\n");
+
+            if (sc != null)
+            {
+                Item item = db.Items.First(i => i.Id == item_id);
+                if (sc.Count + val <= item.Count && sc.Count + val > 0)
+                {
+                    Console.Write($"\n\n\n {sc.Count} \n\n\n");
+                    sc.Count += val;
+                }
+            }
+            db.SaveChanges();
+            return new NoContentResult();
+        }
+
         [HttpPost]
         public IActionResult AddToCart(BuyModel model)
         {
@@ -79,7 +99,7 @@ namespace WebApplication1.Controllers
 
             if (user != null)
             {
-                ShopCart sc = db.ShopCarts.FirstOrDefault(sc => sc.Item == item &&  sc.User == user && sc.Ordered == false);
+                ShopCart sc = db.ShopCarts.FirstOrDefault(sc => sc.Item == item && sc.User == user && sc.Ordered == false);
 
                 if (sc == null)
                 {
@@ -93,7 +113,10 @@ namespace WebApplication1.Controllers
                     db.ShopCarts.Add(new_cart);
 
                 }
-                else sc.Count += count;
+                else
+                {
+                    if (sc.Count < item.Count) sc.Count += count;
+                }
 
                 db.SaveChanges();
 
@@ -217,6 +240,10 @@ namespace WebApplication1.Controllers
             foreach (var cart in carts) {
                 cart.Ordered = true;
                 cart.Order = new_order;
+
+                Item item = db.Items.First(i => i.Id == cart.ItemId);
+                item.Count -= cart.Count;
+                db.SaveChanges();
             }
 
             db.SaveChanges();

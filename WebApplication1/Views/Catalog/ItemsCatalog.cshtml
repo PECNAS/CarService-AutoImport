@@ -168,21 +168,27 @@
 					</div>
 				</div>
 				<div class="item-price">
-					<span>@item.Price руб.</span>
+					<span>@item.Price РУБ.</span>
 				</div>
 				<div class="item-btns">
 					<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 						<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 						<input asp-for="Counter" value="1" style="display: none;" />
-						@{
-							if (ViewBag.carts.Contains(item.Id))
-							{
-								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
-							} else
-							{
-								<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+							@{
+								if (item.Count > 0)
+								{		
+									if (ViewBag.carts.Contains(item.Id))
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									} else
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									}
+								} else
+								{
+									<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+								}
 							}
-						}
 					</form>
 				</div>
 			</div>
@@ -227,20 +233,27 @@
 						</div>
 					</div>
 					<div class="item-price">
-						<span>@item.Price руб.</span>
+						<span>@item.Price РУБ.</span>
 					</div>
 					<div class="item-btns">
 						<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 							<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 							<input asp-for="Counter" value="1" style="display: none;" />
 							@{
-								if (ViewBag.carts.Contains(item.Id))
+								if (item.Count != 0)
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									if (ViewBag.carts.Contains(item.Id))
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									}
+									else
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									}
 								}
 								else
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -286,20 +299,27 @@
 						</div>
 					</div>
 					<div class="item-price">
-						<span>@item.Price руб.</span>
+						<span>@item.Price РУБ.</span>
 					</div>
 					<div class="item-btns">
 						<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 							<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 							<input asp-for="Counter" value="1" style="display: none;" />
 							@{
-								if (ViewBag.carts.Contains(item.Id))
+								if (item.Count != 0)
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									if (ViewBag.carts.Contains(item.Id))
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									}
+									else
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									}
 								}
 								else
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -345,20 +365,27 @@
 						</div>
 					</div>
 					<div class="item-price">
-						<span>@item.Price руб.</span>
+						<span>@item.Price РУБ.</span>
 					</div>
 					<div class="item-btns">
 						<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 							<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 							<input asp-for="Counter" value="1" style="display: none;" />
 							@{
-								if (ViewBag.carts.Contains(item.Id))
+								if (item.Count != 0)
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									if (ViewBag.carts.Contains(item.Id))
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									}
+									else
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									}
 								}
 								else
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -404,20 +431,27 @@
 						</div>
 					</div>
 					<div class="item-price">
-						<span>@item.Price руб.</span>
+						<span>@item.Price РУБ.</span>
 					</div>
 					<div class="item-btns">
 						<form asp-action="AddToCart" asp-controller="Catalog" method="post">
 							<input asp-for="ItemId" value="@item.Id" style="display: none;" />
 							<input asp-for="Counter" value="1" style="display: none;" />
 							@{
-								if (ViewBag.carts.Contains(item.Id))
+								if (item.Count != 0)
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									if (ViewBag.carts.Contains(item.Id))
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+									}
+									else
+									{
+										<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									}
 								}
 								else
 								{
-									<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+									<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>

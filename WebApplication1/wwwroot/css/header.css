@@ -294,7 +294,6 @@ button:hover {
 }
 
 .result-list {
-	height: 100%;
 	width: 100%;
 	list-style-type: none;
 	overflow-y: auto;
@@ -599,28 +598,35 @@ button:hover {
 }
 
 .result-list {
-	height: 100%;
 	width: 100%;
+	height: 100%;
 	list-style-type: none;
 	overflow-y: auto;
 	padding: 0;
-	padding-top: 2vh;
-	a
-
-{
-	color: #262626;
-	text-decoration: none;
+	margin: 0;
+	padding-top: 0vh;
+	padding-bottom: 0vh;
+	a	{
+			color: #262626;
+			text-decoration: none;
+		}
 }
 
+.result {
+	padding-top: 1.3vh;
 }
 
 .search-result {
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 2vh;
+	padding-bottom: 0;
 	display: flex;
 	transition: .2s all;
+}
+
+.search-result:last-child {
+	padding-bottom: 2vh;
 }
 
 .search-result:hover {

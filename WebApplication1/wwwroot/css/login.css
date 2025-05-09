@@ -24,39 +24,6 @@ input {
 		height: 20vw;
 	}
 
-	#modal-shadow {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, .4);
-		background-color: #535353;
-	}
-
-	#error-modal {
-		width: 60vw;
-		min-height: 6vh;
-		position: relative;
-		padding: 2vw;
-		top: 5vh;
-		left: 20vw;
-		background-color: #FFFFFF;
-		font-size: 3vw;
-		font-weight: 500;
-		justify-content: center;
-		text-align: center;
-		border: 0.2vw solid #b30016;
-		border-radius: 1.4vw;
-	}
-
-	#close-modal {
-		position: absolute;
-		top: 1vh;
-		right: .9vw;
-		border: none;
-		background: none;
-	}
-
 
 	#content {
 		width: 80vw;
@@ -232,54 +199,17 @@ input {
 		height: 100vh;
 	}
 
-	#modal-shadow {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, .4);
-	}
 
-#error-modal {
-	width: 40vw;
-	height: 16vh;
 
-	position: relative;
-	padding: 2vw;
-	top: 5vh;
-
-	left: 30vw;
-
-	background-color: #FFFFFF;
-	font-size: 1.2vw;
-	font-weight: 500;
-
-	justify-content: center;
-	text-align: center;
-
-	border: 0.2vw solid #b30016;
-	border-radius: 1.4vw;
+.inner-container {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-#close-modal {
-	position: absolute;
-	top: 1vh;
-	right: .9vw;
-
-	border: none;
-	background: none;
-}
-
-
-	.inner-container {
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-left: auto;
-		margin-right: auto;
-	}
 
 #content {
-	width: 37vw;
+	width: 50vw;
 	min-height: 50vh;
 
 	font-family: "Montserrat";
@@ -301,6 +231,8 @@ input {
 	font-weight: 600;
 	font-size: 3vw;
 	text-align: center;
+
+	padding-bottom: 12vh;
 }
 
 .input-row {
@@ -331,17 +263,15 @@ input {
 	width: 100%;
 	height: 5vh;
 
-	padding: .5vh 3vw .5vh 5vw;
+	padding: .5vh 3vw .5vh 3vw;
 
-	/*
-
-		border: none;
-		border-radius: 1.2vw;
-	*/
 	border: none;
-	border-bottom: 0.05vw solid #C9C9C9;
-	transition: .3s all;
+	border-bottom: 0.05vw solid #000000;
 
+	font-size: 1.3vw;
+	color: #0C0C0C;
+
+	transition: .3s all;
 }
 
 	.input-row input:focus {
@@ -374,12 +304,12 @@ input {
 	display: inline-block;
 	width: 2vw;
 	height: 2vw;
-	background: url("../imgs/eye.png") no-repeat;
+	background: url("../imgs/eye2.png") no-repeat;
 	background-size: 1.6vw;
 }
 
 	.view {
-		background-image: url("../imgs/eye2.png");
+		background-image: url("../imgs/eye.png");
 	}
 
 #PhoneNumber {
@@ -404,8 +334,8 @@ input {
 */
 
 .btn-container {
-	width: 13vw;
-	height: 4.8vh;
+	width: 16.97svw;
+	height: 6.3vh;
 
 	margin-left: auto;
 	margin-right: auto;

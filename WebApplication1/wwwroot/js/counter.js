@@ -6,7 +6,7 @@ var plus = document.querySelector("#plus-btn");
 console.log(counter);
 
 minus.addEventListener("click", (event) => {
-    if (parseInt(counter.innerHTML) > 1) {
+    if (parseInt(counter.value) > 1) {
         //counter.innerHTML = parseInt(counter.innerHTML) - 1;
         counter.value = parseInt(counter.value) - 1
     }
@@ -15,6 +15,14 @@ minus.addEventListener("click", (event) => {
 
 plus.addEventListener("click", (event) => {
     //counter.innerHTML = parseInt(counter.innerHTML) + 1;
-    counter.value = parseInt(counter.value) + 1;
-    counter_input.value = counter.innerHTML;
+    if (parseInt(counter.value) < window.max_count) {
+        counter.value = parseInt(counter.value) + 1;
+        counter_input.value = counter.innerHTML;
+    }
 });
+
+counter.addEventListener("focusout", (event) => {
+    if (parseInt(counter.value) > window.max_count) {
+        counter.value = window.max_count;
+    }
+})

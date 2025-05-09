@@ -42,9 +42,14 @@
 								<span>@item.Price руб./ед.</span>
 							</div>
 							<div class="counter-container">
-								<div class="item-count">
+								<!--<div class="item-count">
 									<span>@count шт</span>
-								</div>
+								</div>-->
+
+								<button class="counter-btn" onclick='minus_count("@item.Id")' id="minus-btn">-</button>
+								<input type="number" onkeyup='focus_out("@item.Id", @item.Count)' value="@count" class='counter-btn' id="counter-@item.Id" />
+								<button class="counter-btn" onclick='plus_count("@item.Id", @item.Count)' id="plus-btn">+</button>
+
 								<div class="trash-container">
 									<a
 										asp-controller="Catalog"
@@ -117,6 +122,7 @@
 	}
 </div>
 
+<script src="~/js/counter_cart.js" type="text/javascript"></script>
 <script>
 	var radios = document.querySelectorAll(".point-radio");
 	var btn = document.querySelector("#PlaceOrderBtn");
