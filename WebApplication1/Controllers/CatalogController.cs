@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
             this.db = db;
         }
 
-        public IActionResult Index(List<Item> items = null)
+        public IActionResult Index(List<Item> items = null, int? car_id = null)
         {
             List<Category> categories = db.Categories.ToList();
             ViewBag.categories = categories;
@@ -58,6 +58,11 @@ namespace WebApplication1.Controllers
 
             var cars = db.Cars.ToList();
             ViewBag.cars = cars;
+
+            if (car_id != null)
+            {
+                ViewBag.car_id = car_id;
+            }
 
             return View("ItemsCatalog");
         }
@@ -219,8 +224,15 @@ namespace WebApplication1.Controllers
         {
             List<Item> items = new List<Item>();
 
-            items = db.Items.Where(i => i.CarId == car_id).ToList();
-            return Index(items);
+            if (car_id == -1)
+            {
+                items = db.Items.ToList();
+            } else
+            {
+                items = db.Items.Where(i => i.CarId == car_id).ToList();
+            }
+
+            return Index(items, car_id);
         }
 
         [HttpPost]

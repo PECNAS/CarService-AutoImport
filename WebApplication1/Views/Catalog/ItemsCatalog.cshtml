@@ -72,21 +72,22 @@
 	}
 
 	function change_catalog() {
-		var new_class = document.querySelector("select").value;
+		var new_class = document.querySelectorAll("select")[0].value;
 		var catalogs = document.querySelectorAll(".items-container");
 
-		if (!(parseInt(new_class) >= 0 || parseInt(new_class) <= 0)) {
-			catalogs.forEach((el) => {
-				if (el.classList[1] == new_class) {
-					el.style.display = "flex";
-				} else {
-					el.style.display = "none";
-				}
-				console.log(el.classList);
-			});
-		} else {
-			location.href = "/Catalog/CarFilter/?car_id=" + new_class;
-		}
+		catalogs.forEach((el) => {
+			if (el.classList[1] == new_class) {
+				el.style.display = "flex";
+			} else {
+				el.style.display = "none";
+			}
+			console.log(el.classList);
+		});
+	}
+
+	function change_cars_catalog() {
+		var new_class = document.querySelectorAll("select")[1].value;
+		location.href = "/Catalog/CarFilter/?car_id=" + new_class;
 	}
 </script>
 
@@ -111,11 +112,27 @@
 					ПО УМОЛЧАНИЮ
 				</option>
 
+			</select>
+		</div>
+		<div class="filters-container">
+			<select name="CarsFilter" onchange="change_cars_catalog()">
+				<option value="-1" class="option-value" selected>
+					ВСЕ МАРКИ
+				</option>
+
 				@foreach (Models.Car car in ViewBag.cars)
 				{
-					<option class="option-value" value="@car.Id">
-						@car.Mark @car.Model
-					</option>
+					if (ViewBag.car_id == car.Id)
+					{
+						<option class="option-value" value="@car.Id" selected>
+							@car.Mark @car.Model
+						</option>
+					} else
+					{
+						<option class="option-value" value="@car.Id">
+							@car.Mark @car.Model
+						</option>
+					}
 				}
 			</select>
 		</div>
@@ -154,18 +171,18 @@
 				@{
 					if (ViewBag.favs.Contains(item.Id))
 					{
-													<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
-														<input hidden type="number" name="ItemId" value="@item.Id"/>
-														<input hidden type="text" name="NeedToRedirect" value="false"/>
-														<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
-													</form>
+														<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+															<input hidden type="number" name="ItemId" value="@item.Id"/>
+															<input hidden type="text" name="NeedToRedirect" value="false"/>
+															<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+														</form>
 					} else
 					{
-													<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
-														<input hidden type="number" name="ItemId" value="@item.Id"/>
-														<input hidden type="text" name="NeedToRedirect" value="false"/>
-														<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
-													</form>
+														<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+															<input hidden type="number" name="ItemId" value="@item.Id"/>
+															<input hidden type="text" name="NeedToRedirect" value="false"/>
+															<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+														</form>
 					}
 				}
 				</div>
@@ -192,14 +209,14 @@
 								{		
 									if (ViewBag.carts.Contains(item.Id))
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									} else
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								} else
 								{
-												<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+													<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 					</form>
@@ -218,19 +235,19 @@
 						@{
 							if (ViewBag.favs.Contains(item.Id))
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+												</form>
 							}
 							else
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+												</form>
 							}
 						}
 					</div>
@@ -257,16 +274,16 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
 								{
-												<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+													<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -284,19 +301,19 @@
 						@{
 							if (ViewBag.favs.Contains(item.Id))
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+												</form>
 							}
 							else
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+												</form>
 							}
 						}
 					</div>
@@ -323,16 +340,16 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
 								{
-												<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+													<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -350,19 +367,19 @@
 						@{
 							if (ViewBag.favs.Contains(item.Id))
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+												</form>
 							}
 							else
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+												</form>
 							}
 						}
 					</div>
@@ -389,16 +406,16 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
 								{
-												<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+													<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
@@ -416,19 +433,19 @@
 						@{
 							if (ViewBag.favs.Contains(item.Id))
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+												</form>
 							}
 							else
 							{
-											<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
-												<input hidden type="number" name="ItemId" value="@item.Id" />
-												<input hidden type="text" name="NeedToRedirect" value="false" />
-												<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
-											</form>
+												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
+													<input hidden type="number" name="ItemId" value="@item.Id" />
+													<input hidden type="text" name="NeedToRedirect" value="false" />
+													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+												</form>
 							}
 						}
 					</div>
@@ -455,16 +472,16 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-													<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
 								{
-												<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
+													<button class="item-btn not-available" disabled type="submit">НЕТ В НАЛИЧИИ</button>
 								}
 							}
 						</form>
