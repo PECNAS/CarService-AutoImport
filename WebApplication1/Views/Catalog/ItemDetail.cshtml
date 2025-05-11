@@ -23,9 +23,13 @@
 <script type="text/javascript">
 	window.max_count = @ViewBag.item.Count;
 
-	function show_modal() {
+	function show_modal(text) {
 		var modal = document.querySelector("#cart-modal");
 		modal.classList = "animate-modal";
+
+		if (text != null) {
+			modal.querySelector("#modal-text").innerHTML = text;
+		}
 		setTimeout(
 			() => {
 				modal.classList = "";
@@ -42,10 +46,15 @@
 		if (state == true) {
 			add_form.style.display = "none";
 			remove_form.style.display = "block";
+
+			show_modal("Товар добавлен в избранное");
 		} else {
 			add_form.style.display = "block";
 			remove_form.style.display = "none";
+
+			show_modal("Товар удален из избранного");
 		}
+
 	}
 </script>
 

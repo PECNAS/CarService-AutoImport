@@ -15,16 +15,19 @@ namespace WebApplication1.Controllers
             this.db = db;
         }
 
-        async public Task<IActionResult> Index()
+        public IActionResult Index()
         {
+            if (TempData["Error"] != null)
+            {
+                ViewBag.error_message = TempData["Error"];
+                ViewBag.IsValid = false;
+            }
+
+            User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            ViewBag.authorized = user != null;
             return View();
              
-            var user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
-            if (user == null)
-            {
-                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-			}
-            return RedirectToAction("Index", "Catalog");
+            
         }
     }
 }

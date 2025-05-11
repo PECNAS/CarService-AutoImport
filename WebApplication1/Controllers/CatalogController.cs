@@ -56,6 +56,9 @@ namespace WebApplication1.Controllers
             ViewBag.favs = favs_bag;
             ViewBag.carts = carts_bag;
 
+            var cars = db.Cars.ToList();
+            ViewBag.cars = cars;
+
             return View("ItemsCatalog");
         }
 
@@ -143,8 +146,10 @@ namespace WebApplication1.Controllers
                 return new NoContentResult();
                 return RedirectToAction("MyCart", "Catalog");
             }
-            return RedirectToAction("Login", "User");
-        }
+
+			TempData["error"] = "Вы не авторизованы в системе!";
+			return RedirectToAction("Index", "Home");
+		}
 
         public IActionResult RemoveFromCart(int id)
         {
@@ -163,8 +168,10 @@ namespace WebApplication1.Controllers
             User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
             if (user == null)
             {
-                return RedirectToAction("Login", "User");
-            }
+
+				TempData["error"] = "Вы не авторизованы в системе!";
+				return RedirectToAction("Index", "Home");
+			}
 
             var carts = db.ShopCarts.Where(c => c.User == user && c.Ordered == false).ToList();
             List<Item> items = new List<Item>();
@@ -207,6 +214,15 @@ namespace WebApplication1.Controllers
             //return PartialView("ItemsCatalog", items);
         }
 
+        [HttpGet]
+        public IActionResult CarFilter(int car_id)
+        {
+            List<Item> items = new List<Item>();
+
+            items = db.Items.Where(i => i.CarId == car_id).ToList();
+            return Index(items);
+        }
+
         [HttpPost]
         public IActionResult CategoryFilter(int CategoryId)
         {
@@ -244,7 +260,6 @@ namespace WebApplication1.Controllers
                 db.PickPoints.Add(pickPoint);
                 db.SaveChanges();
 			}
-
 			Order new_order = new Order()
             {
                 Time = DateTime.Now.ToString(),
@@ -277,7 +292,9 @@ namespace WebApplication1.Controllers
 			User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
 			if (user == null)
 			{
-				return RedirectToAction("Login", "User");
+
+				TempData["error"] = "Вы не авторизованы в системе!";
+				return RedirectToAction("Index", "Home");
 			}
 
 

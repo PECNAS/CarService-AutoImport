@@ -1,6 +1,6 @@
 
 
-@media (max-width: 600px) { /* MOBILE STYLES */
+@media (max-width: 1000px) { /* MOBILE STYLES */
     #content {
         width: 90vw;
         min-height: 76vh;
@@ -307,7 +307,7 @@
 }
 
 
-@media (min-width: 600px) { /* DESKTOP STYLES */
+@media (min-width: 1000px) { /* DESKTOP STYLES */
     #content {
         width: 90vw;
         min-height: 76vh;
@@ -599,4 +599,8 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input {
+    text-align: center;
 }

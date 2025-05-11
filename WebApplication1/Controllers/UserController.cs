@@ -21,9 +21,12 @@ namespace WebApplication1.Controllers
             var user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
             if (user == null)
             {
-				await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-                return RedirectToAction("Login", "User");
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                TempData["error"] = "Вы не авторизованы в системе!";
+                return RedirectToAction("Index", "Home");
+				
 			}
+
             List<List<Item>> orders = new List<List<Item>>();
             List<int> counts = new List<int>();
             List<Dictionary<string, string>> orders_info = new List<Dictionary<string, string>>();
@@ -67,8 +70,9 @@ namespace WebApplication1.Controllers
             User user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
             if (user == null)
             {
-                return RedirectToAction("Login", "User");
-            }
+				TempData["error"] = "Вы не авторизованы в системе!";
+				return RedirectToAction("Index", "Home");
+			}
 
             var favs = db.Favorites.Where(f => f.UserId == user.UserId).ToList();
             List<Item> items = new List<Item>();
@@ -91,14 +95,18 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel model)
+        public async Task<IActionResult> Login(string Email, string Password)
         {
-            if (ModelState.IsValid)
+			LoginModel model = new LoginModel();
+            model.Email = Email;
+            model.Password = Password;
+
+			if (ModelState.IsValid)
             {
                 User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user != null)
@@ -106,7 +114,7 @@ namespace WebApplication1.Controllers
                     if (Models.User.VerifyPassword(model.Password, user.Password))
                     {
                         await Authenticate(model.Email); // аутентификация
-
+                        ViewBag.authorized = true;
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -115,23 +123,30 @@ namespace WebApplication1.Controllers
                 if (user != null) error = "Неверный пароль!";
                 else error = "Пользователь с почтой " + model.Email + " не найден";
 
-                ModelState.AddModelError("Email", error);
+                //ModelState.AddModelError("Email", error);
+                ViewBag.error_message = error;
             }
 			ViewBag.IsValid = false;
-			return View(model);
+			return View("~/Views/Home/Index.cshtml", model);
         }
 
         [HttpGet]
         public IActionResult Registration()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Registration(RegModel model)
+        public async Task<IActionResult> Registration(string Password, string Email, string PhoneNumber, string Name)
         {
-            if (ModelState.IsValid)
+			RegModel model = new RegModel();
+            model.PhoneNumber = PhoneNumber;
+            model.Name = Name;
+            model.Password = Password;
+            model.Email = Email;
+
+			if (ModelState.IsValid)
             {
                 User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
@@ -160,18 +175,19 @@ namespace WebApplication1.Controllers
                     user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                     if (user != null) error = "Почта уже занята";
 
-                    ModelState.AddModelError("Email", error);
+                    //ModelState.AddModelError("Email", error);
+                    ViewBag.error_message = error;
                 }
             }
             ViewBag.IsValid = false;
-            return View(model);
+            return View("~/Views/Home/Index.cshtml", model);
         }
 
 
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "User");
+            return RedirectToAction("Index", "Home");
         }
 
         private async Task Authenticate(string userName)

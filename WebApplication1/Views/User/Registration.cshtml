@@ -2,14 +2,13 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewData["ShowHeader"] = false;
 }
-@model ViewModels.RegModel;
 
 <link href="~/css/login.css" rel="stylesheet" />
-<link href="~/css/modal.css" rel="stylesheet" />
 
 <script type="text/javascript">
-	function close_modal() {
-		document.querySelector("#modal-shadow").style.display = "none";
+	function close_modal_reg() {
+		document.querySelector("#reg-body").querySelector("#modal-shadow").style.display = "none";
+		document.querySelector("#login-body").querySelector("#modal-shadow").style.display = "none";
 	}
 
 	function view_psswd() {
@@ -26,6 +25,8 @@
 	}
 </script>
 
+
+<div class="body-container" id="reg-body">
 @if (ViewBag.IsValid == false)
 {
 	<div id="modal-shadow">
@@ -36,50 +37,43 @@
 			<div class="modal-text">
 				<span class="modal-title">ВНИМАНИЕ</span>
 				<span id="modal-text">
-					@Html.ValidationMessageFor(Model => Model.Email)
+					@ViewBag.error_message
 				</span>
 			</div>
-			<button onclick="close_modal()" id="close-modal">X</button>
+			<button onclick="close_modal_reg()" id="close-modal">X</button>
 		</div>
 	</div>
 }
+	<div class="inner-container">
+		<div id="auth-content">
+			<div class="form-title">
+				<span>РЕГИСТРАЦИЯ</span>
+			</div>
+			<div class="inputs-container">
+				<form asp-controller="User" asp-action="Registration" method="post">
+					<div class="input-row">
+						<input autocomplete="off" type="text" name="Email" id="Email" placeholder="E-mail">
+					</div>
+					<div class="input-row">
+						<input type="text" autocomplete="off" name="PhoneNumber" id="PhoneNumber" placeholder="+7">
+					</div>
+					<div class="input-row">
+						<input type="text" name="Name" id="Name" autocomplete="off" placeholder="Имя">
+					</div>
+					<div class="input-row" id="psswd-input">
+						<input type="password" name="Password" id="Password" autocomplete="off" placeholder="Пароль">
+						<a onclick="view_psswd()" href="#" class="password-control"></a>
+					</div>
 
-<div class="logo-container">
-	<a href="/">
-		<img src="~/imgs/logo.png" width="100%" height="100%" />
-	</a>
-</div>
-
-
-<div class="inner-container">
-	<div id="content">
-		<div class="form-title">
-			<span>РЕГИСТРАЦИЯ</span>
+					<div class="btn-container">
+						<button type="submit" disabled id="send">СОЗДАТЬ</button>
+					</div>
+				</form>
+			</div>
 		</div>
-		<div class="inputs-container">
-			<form asp-action="Registration" method="post">
-				<div class="input-row">
-					<input autocomplete="off" type="text" asp-for="Email" placeholder="E-mail">
-				</div>
-				<div class="input-row">
-					<input type="text" autocomplete="off" asp-for="PhoneNumber" placeholder="+7">
-				</div>
-				<div class="input-row">
-					<input type="text" asp-for="Name" autocomplete="off" placeholder="Имя">
-				</div>
-				<div class="input-row" id="psswd-input">
-					<input type="password" asp-for="Password" autocomplete="off" placeholder="Пароль">
-					<a onclick="view_psswd()" href="#" class="password-control"></a>
-				</div>
-			
-				<div class="btn-container">
-					<button type="submit" id="send">СОЗДАТЬ</button>
-				</div>
-			</form>
+		<div class="other-page-link">
+			<span>У вас есть учетная запись? </span><a href="#login-body" onclick="hide_reg();">Войти</a>
 		</div>
-	</div>
-	<div class="other-page-link">
-		<span>У вас есть учетная запись? </span><a asp-action="Login">Войти</a>
 	</div>
 </div>
 <script src="https://unpkg.com/imask" type="text/javascript"></script>
@@ -92,3 +86,5 @@
 		window.name_valid = true;
 	}
 </script>
+
+<link href="~/css/modal.css" rel="stylesheet" />

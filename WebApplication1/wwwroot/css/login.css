@@ -16,16 +16,21 @@ input {
 }
 
 @media (max-width: 1000px) {
-	.logo-container {
-		position: absolute;
-		top: 0;
-		left: 5vw;
-		width: 20vw;
-		height: 20vw;
+	.body-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 100vh;
 	}
 
+	.inner-container {
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-	#content {
+	#auth-content {
 		width: 80vw;
 		height: 100%;
 		margin-top: 10vh;
@@ -184,20 +189,13 @@ input {
 }
 
 @media (min-width: 1000px){
-	.logo-container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 6vw;
-		height: 6vw;
-	}
 
-	body {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		height: 100vh;
-	}
+.body-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100vh;
+}
 
 
 
@@ -208,7 +206,7 @@ input {
 	margin-right: auto;
 }
 
-#content {
+#auth-content {
 	width: 50vw;
 	min-height: 50vh;
 
@@ -393,4 +391,8 @@ input {
 		  text-decoration: none;
 	  }
 }
+}
+
+#content {
+	padding-top: 0px;
 }

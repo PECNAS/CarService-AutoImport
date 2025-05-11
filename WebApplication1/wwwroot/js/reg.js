@@ -1,10 +1,10 @@
-var btn = document.querySelector("#send");
+var btn = document.querySelector("#reg-body").querySelector("#send");
 btn.setAttribute("disabled", "");
 
-var email = document.querySelector("#Email");
-var psswd = document.querySelector("#Password");
-var phone_number = document.querySelector("#PhoneNumber");
-var name_input = document.querySelector("#Name");
+var email = document.querySelector("#reg-body").querySelector("#Email");
+var psswd = document.querySelector("#reg-body").querySelector("#Password");
+var phone_number = document.querySelector("#reg-body").querySelector("#PhoneNumber");
+var name_input = document.querySelector("#reg-body").querySelector("#Name");
 
 var maskOptions = {
 	mask: '+7 (000) 000 - 00 - 00',

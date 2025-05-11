@@ -1,13 +1,4 @@
-﻿#content {
-	width: 90vw;
-	height: 100%;
-
-	margin-left: auto;
-	margin-right: auto;
-
-}
-
-
+﻿
 @media (max-width: 600px) { /* MOBILE STYLES*/
 	.hero-section {
 		width: 100%;
@@ -325,4 +316,13 @@
 		font-size: 1.3vw;
 	}
 
+}
+
+#content {
+	width: 90vw;
+	height: 100%;
+	margin: 0px;
+	padding-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
 }

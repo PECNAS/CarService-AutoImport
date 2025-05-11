@@ -1,37 +1,37 @@
-var btn = document.querySelector("#send");
-btn.setAttribute("disabled", "");
+var login_btn = document.querySelector("#login-body").querySelector("#send");
+login_btn.setAttribute("disabled", "");
 
-var email = document.querySelector("#Email");
-var psswd = document.querySelector("#Password");
+var login_email = document.querySelector("#login-body").querySelector("#Email");
+var login_psswd = document.querySelector("#login-body").querySelector("#Password");
 
-window.email_valid = false;
-window.psswd_valid = false;
+window.login_email_valid = false;
+window.login_psswd_valid = false;
 
-function button_unlock() {
-	if (window.psswd_valid && window.email_valid) {
-		btn.removeAttribute("disabled");
+function login_button_unlock() {
+	if (window.login_psswd_valid && window.login_email_valid) {
+		login_btn.removeAttribute("disabled");
 	} else {
-		btn.setAttribute("disabled", "");
+		login_btn.setAttribute("disabled", "");
 	}
 }
 
-function email_check() {
-	if (email.value.includes("@") && (email.value.includes(".com") || email.value.includes(".ru"))) {
-		window.email_valid = true;
+function login_email_check() {
+	if (login_email.value.includes("@") && (login_email.value.includes(".com") || login_email.value.includes(".ru"))) {
+		window.login_email_valid = true;
 	} else {
-		window.email_valid = false;
+		window.login_email_valid = false;
 	}
-	button_unlock();
+	login_button_unlock();
 }
 
-function password_check() {
-	if (psswd.value != "" && psswd.value.length >= 8) {
-		window.psswd_valid = true
+function login_password_check() {
+	if (login_psswd.value != "" && login_psswd.value.length >= 8) {
+		window.login_psswd_valid = true
 	} else {
-		window.psswd_valid = false;
+		window.login_psswd_valid = false;
 	}
-	button_unlock();
+	login_button_unlock();
 }
 
-email.addEventListener("keyup", email_check);
-psswd.addEventListener("keyup", password_check);
+login_email.addEventListener("keyup", login_email_check);
+login_psswd.addEventListener("keyup", login_password_check);

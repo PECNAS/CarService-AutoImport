@@ -494,7 +494,7 @@ button:hover {
 #footer {
 	width: 100%;
 	min-height: 20vh;
-	margin-top: 3vh;
+	
 	padding-top: 3vh;
 	display: flex;
 	background-color: #9A0300;
