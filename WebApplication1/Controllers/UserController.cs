@@ -59,7 +59,7 @@ namespace WebApplication1.Controllers
 			ViewBag.orders = orders;
             ViewBag.counts = counts;
             ViewBag.orders_info = orders_info;
-            ViewBag.point = db.PickPoints.First(p => p.Id == user.PickPointId);
+            ViewBag.point = db.PickPoints.First(p => p.Id == db_orders.First().PickPointId);
 
             return View("Profile");
         }

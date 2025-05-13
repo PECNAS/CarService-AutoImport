@@ -480,7 +480,7 @@
     }
 
     .points-container {
-        width: 23vw;
+        width: 30vw;
         height: 100%;
         margin-top: 2vh;
     }
@@ -514,6 +514,10 @@
         height: 12vh;
     }
 
+    label {
+        width: 100%;
+    }
+
     .point-row {
         width: 100%;
         height: 14vh;
@@ -526,7 +530,7 @@
     }
 
     .point-text-container {
-        width: 16vw;
+        width: 23vw;
         height: 100%;
         margin-left: 1vw;
     }

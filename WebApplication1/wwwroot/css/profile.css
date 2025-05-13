@@ -288,7 +288,7 @@
 
 	.items-card ul {
 		width: 100%;
-		height: 100%;
+		height: 90%;
 
 		list-style-type: none;
 		overflow-y: scroll;
@@ -449,6 +449,10 @@
 
 		.exit-profile:hover {
 			color: #b30016;
+		}
+
+		#footer {
+			margin-top: 5vh;
 		}
 }
 

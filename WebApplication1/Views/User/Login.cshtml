@@ -11,8 +11,8 @@
 		document.querySelector("#reg-body").querySelector("#modal-shadow").style.display = "none";
 	}
 
-	function view_psswd() {
-		var psswd_input = document.querySelector("#Password");
+	function view_psswd_login() {
+		var psswd_input = document.querySelector("#login-body").querySelector("#Password");
 		var eye = document.querySelector(".password-control");
 
 		if (psswd_input.getAttribute("type") == "text") {
@@ -65,7 +65,7 @@
 					<div class="input-row" id="psswd-input">
 						<!--<span>Пароль: </span>--> 
 						<input type="password" autocomplete="off" id="Password" name="Password" class="form-input" placeholder="Пароль">
-						<a onclick="view_psswd()"  class="password-control"></a>
+						<a onclick="view_psswd_login()"  class="password-control"></a>
 					</div>
 
 					<div class="btn-container">

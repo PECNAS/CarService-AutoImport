@@ -12,7 +12,7 @@
 	}
 
 	function view_psswd() {
-		var psswd_input = document.querySelector("#Password");
+		var psswd_input = document.querySelector("#reg-body").querySelector("#Password");
 		var eye = document.querySelector(".password-control");
 
 		if (psswd_input.getAttribute("type") == "text") {
@@ -62,7 +62,7 @@
 					</div>
 					<div class="input-row" id="psswd-input">
 						<input type="password" name="Password" id="Password" autocomplete="off" placeholder="Пароль">
-						<a onclick="view_psswd()" href="#" class="password-control"></a>
+						<a onclick="view_psswd()" class="password-control"></a>
 					</div>
 
 					<div class="btn-container">
