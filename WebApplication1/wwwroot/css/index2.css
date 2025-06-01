@@ -23,7 +23,7 @@
 
 .about-title {
     width: 100%;
-    font-size: 4.5vw;
+    font-size: 4vw;
     color: #5E0301;
     font-weight: 600;
 }
@@ -33,11 +33,8 @@
     font-size: 1.2vw;
     color: white;
     margin-bottom: 4vh;
+    text-indent: 1vw;
 }
-s
-    .about-desc p {
-        text-indent: 1vw;
-    }
 
 .about-map-container {
     width: 40vw;
@@ -55,7 +52,7 @@ iframe {
 .advs-container {
     width: 100%;
     height: 100vh;
-    padding-top: 27vh;
+    padding-top: 17vh;
     padding-bottom: 30vh;
     
 }
@@ -64,6 +61,7 @@ iframe {
     font-size: 3vw;
     font-weight: 500;
     text-align: center;
+    margin-bottom: 10vh
     
 }
 
@@ -71,19 +69,18 @@ iframe {
     width: 100%;
     height: 40vh;
     display: flex;
-    background-color: #9A0300;
+    background-color: #aa001c;
 }
 
 .advantage {
     width: 20vw;
-    margin: 5vh 0vw 5vh 4vw;
+    margin: 5vh 0vw 5vh 5vw;
     padding-right: 5vw;
     border-right: 1px solid white;
 }
 
     .advantage:last-child {
         border: none;
-        margin-right: 0;
     }
 
 .advantage-img {
@@ -98,7 +95,7 @@ iframe {
     }
 
 .advantage-text {
-    width: 80%;
+    width: 100%;
     height: 100%;
     word-wrap: normal;
     text-align: center;
@@ -109,6 +106,7 @@ iframe {
 
     .advantage-text span {
         font-size: 1.4vw;
+        font-size: 1vw;
         font-weight: 500;
         color: white;
     }

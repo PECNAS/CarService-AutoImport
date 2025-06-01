@@ -55,15 +55,15 @@ body {
 
 		/* .category button.all-items {
 			cursor: pointer;
-			background-color: #b30016;
+			background-color: #aa001c;
 			color: #FFFFFF;
 		}*/
 
 		.category button:hover {
 			cursor: pointer;
-			background-color: #b30016;
+			background-color: #aa001c;
 			color: #FFFFFF;
-			border-color: #b30016;
+			border-color: #aa001c;
 		}
 
 
@@ -157,13 +157,13 @@ body {
 		}
 
 	.show-item {
-		border: 0.1vw solid #b30016;
-		background-color: #b30016;
+		border: 0.1vw solid #aa001c;
+		background-color: #aa001c;
 		color: white;
 	}
 
 	.to-cart {
-		background: #9A0300;
+		background: #aa001c;
 	}
 
 	.in-cart {
@@ -278,17 +278,17 @@ body {
 		/*
 		.category button.all-items {
 		cursor: pointer;
-		background-color: #b30016;
+		background-color: #aa001c;
 		color: #FFFFFF;
-		border-color: #b30016;
+		border-color: #aa001c;
 	}
 		*/
 
 		.category button:hover {
 			cursor: pointer;
-			background-color: #b30016;
+			background-color: #aa001c;
 			color: #FFFFFF;
-			border-color: #b30016;
+			border-color: #aa001c;
 		}
 
 
@@ -348,7 +348,7 @@ body {
 		.to-cart {
 				/*background: #120075;*/
 				color: #FFFFFF;
-				background: #9A0300;
+				background: #aa001c;
 		       }
 	}
 
@@ -469,7 +469,7 @@ body {
 	}
 
 	.show-item {
-		background-color: #b30016;
+		background-color: #aa001c;
 		color: white;
 	}
 

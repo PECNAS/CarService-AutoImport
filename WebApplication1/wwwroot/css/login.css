@@ -148,8 +148,8 @@ input {
 			margin-left: -.5vw;
 			border: none;
 			
-			/*background-color: #b30016;*/
-			background-color:#b30016;
+			/*background-color: #aa001c;*/
+			background-color:#aa001c;
 			color: white;
 			transition: .3s all;
 
@@ -181,7 +181,7 @@ input {
 	text-align: center;
 
 	a {
-		  color: #b30016;
+		  color: #aa001c;
 		  font-weight: 600;
 		  text-decoration: none;
 	  }
@@ -351,10 +351,10 @@ input {
 	border: none;
 	/*
 	border-radius: 1.2vw;
-	background-color: #b30016;
+	background-color: #aa001c;
 
 	*/
-	background-color: #b30016;
+	background-color: #aa001c;
 	color: white;
 
 	font-weight: 600;
@@ -386,7 +386,7 @@ input {
 	text-align: center;
 
 	a {
-		  color: #b30016;
+		  color: #aa001c;
 		  font-weight: 600;
 		  text-decoration: none;
 	  }

@@ -166,7 +166,15 @@
 		@foreach (Models.Item item in ViewBag.items)
 		{
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
-			<div class="item-card">
+			<div class="item-card" id="item-card-item-@item.Id">
+					@if (item.Count == 0)
+					{
+						<style>
+							#item-card-item-@item.Id {
+								opacity: .8;
+							}
+						</style>
+					}
 				<div class="fav-container">
 				@{
 					if (ViewBag.favs.Contains(item.Id))
