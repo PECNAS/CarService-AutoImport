@@ -319,7 +319,7 @@
 	}
 
 	.buy-status {
-		min-width: 7vw;
+		min-width: 9vw;
 
 		text-align: center;
 		color: white;
@@ -329,7 +329,7 @@
 		padding-left: .4vw;
 		padding-right: .4vw;
 
-		margin-left: 20.5vw;
+		margin-left: 18.5vw;
 	}
 
 	.success {
