@@ -26,10 +26,12 @@ namespace WebApplication1.Controllers
                 items = db.Items.ToList();
             }
 
-			List<Item> DOWN2UP_PRICE = items.OrderBy(i => i.Price).ToList();
-            List<Item> UP2DOWN_PRICE = items.OrderByDescending(i => i.Price).ToList();
-			List<Item> UP2DOWN_TITLE = items.OrderBy(i => i.Title).ToList();
-            List<Item> DOWN2UP_TITLE = items.OrderByDescending(i => i.Title).ToList();
+			List<Item> DOWN2UP_PRICE = items.OrderBy(i => i.Price).OrderBy(i => i.Count == 0).ToList();
+			List<Item> UP2DOWN_PRICE = items.OrderByDescending(i => i.Price).OrderBy(i => i.Count == 0).ToList();
+			List<Item> UP2DOWN_TITLE = items.OrderBy(i => i.Title).OrderBy(i => i.Count == 0).ToList();
+			List<Item> DOWN2UP_TITLE = items.OrderByDescending(i => i.Title).OrderBy(i => i.Count == 0).ToList();
+
+            items = items.OrderBy(i => i.Count == 0).ToList();
 
 			ViewBag.items = items;
             ViewBag.UP2DOWN_PRICE = UP2DOWN_PRICE;

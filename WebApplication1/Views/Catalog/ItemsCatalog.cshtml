@@ -165,6 +165,9 @@
 	<div class="items-container ALL">
 		@foreach (Models.Item item in ViewBag.items)
 		{
+		var item_title = item.Title;
+if (item.Title.Length > 12)
+{ item_title = item.Title.Substring(0, 12) + "..."; }
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
 			<div class="item-card" id="item-card-item-@item.Id">
 					@if (item.Count == 0)
@@ -182,14 +185,14 @@
 														<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
 															<input hidden type="number" name="ItemId" value="@item.Id"/>
 															<input hidden type="text" name="NeedToRedirect" value="false"/>
-															<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+															<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
 														</form>
 					} else
 					{
 														<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
 															<input hidden type="number" name="ItemId" value="@item.Id"/>
 															<input hidden type="text" name="NeedToRedirect" value="false"/>
-															<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+															<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
 														</form>
 					}
 				}
@@ -199,10 +202,15 @@
 				</div>
 				<div class="item-text-container">
 					<div class="item-title">
-						<span>@item.Title</span>
+						<span>@item_title</span>
 					</div>
 					<div class="item-type">
-						<span>@item.Type</span>
+					@{
+						var item_type = item.Type;
+						if (item.Type.Length > 51) { item_type = item.Type.Substring(0, 50); }
+						else { item_type = item.Type; }
+					}
+						<span>@item_type</span>
 					</div>
 				</div>
 				<div class="item-price">
@@ -217,10 +225,10 @@
 								{		
 									if (ViewBag.carts.Contains(item.Id))
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									} else
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								} else
 								{
@@ -237,8 +245,19 @@
 	<div class="items-container UP2DOWN_TITLE" style="display: none;">
 		@foreach (Models.Item item in ViewBag.UP2DOWN_TITLE)
 		{
+		var item_title = item.Title;
+if (item.Title.Length > 12)
+{ item_title = item.Title.Substring(0, 12) + "..."; }
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
-				<div class="item-card">
+				<div class="item-card" id="item-card-item-@item.Id">
+					@if (item.Count == 0)
+					{
+						<style>
+							#item-card-item-@item.Id {
+								opacity: .8;
+							}
+						</style>
+					}
 					<div class="fav-container">
 						@{
 							if (ViewBag.favs.Contains(item.Id))
@@ -246,7 +265,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
 												</form>
 							}
 							else
@@ -254,7 +273,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
 												</form>
 							}
 						}
@@ -264,10 +283,15 @@
 					</div>
 					<div class="item-text-container">
 						<div class="item-title">
-							<span>@item.Title</span>
+							<span>@item_title</span>
 						</div>
 						<div class="item-type">
-							<span>@item.Type</span>
+						@{
+							var item_type = item.Type;
+							if (item.Type.Length > 51) { item_type = item.Type.Substring(0, 50); }
+							else { item_type = item.Type; }
+						}
+							<span>@item_type</span>
 						</div>
 					</div>
 					<div class="item-price">
@@ -282,11 +306,11 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
@@ -303,8 +327,19 @@
 	<div class="items-container UP2DOWN_PRICE" style="display: none;">
 		@foreach (Models.Item item in ViewBag.UP2DOWN_PRICE)
 		{
+		var item_title = item.Title;
+if (item.Title.Length > 12)
+{ item_title = item.Title.Substring(0, 12) + "..."; }
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
-				<div class="item-card">
+				<div class="item-card" id="item-card-item-@item.Id">
+					@if (item.Count == 0)
+					{
+						<style>
+							#item-card-item-@item.Id {
+								opacity: .8;
+							}
+						</style>
+					}
 					<div class="fav-container">
 						@{
 							if (ViewBag.favs.Contains(item.Id))
@@ -312,7 +347,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
 												</form>
 							}
 							else
@@ -320,7 +355,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
 												</form>
 							}
 						}
@@ -330,10 +365,15 @@
 					</div>
 					<div class="item-text-container">
 						<div class="item-title">
-							<span>@item.Title</span>
+							<span>@item_title</span>
 						</div>
 						<div class="item-type">
-							<span>@item.Type</span>
+						@{
+							var item_type = item.Type;
+							if (item.Type.Length > 51) { item_type = item.Type.Substring(0, 50); }
+							else { item_type = item.Type; }
+						}
+							<span>@item_type</span>
 						</div>
 					</div>
 					<div class="item-price">
@@ -348,11 +388,11 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
@@ -369,8 +409,19 @@
 	<div class="items-container DOWN2UP_TITLE" style="display: none;">
 		@foreach (Models.Item item in ViewBag.DOWN2UP_TITLE)
 		{
+		var item_title = item.Title;
+if (item.Title.Length > 12)
+{ item_title = item.Title.Substring(0, 12) + "..."; }
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
-				<div class="item-card">
+				<div class="item-card" id="item-card-item-@item.Id">
+					@if (item.Count == 0)
+					{
+						<style>
+							#item-card-item-@item.Id {
+								opacity: .8;
+							}
+						</style>
+					}
 					<div class="fav-container">
 						@{
 							if (ViewBag.favs.Contains(item.Id))
@@ -378,7 +429,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
 												</form>
 							}
 							else
@@ -386,7 +437,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
 												</form>
 							}
 						}
@@ -396,10 +447,15 @@
 					</div>
 					<div class="item-text-container">
 						<div class="item-title">
-							<span>@item.Title</span>
+							<span>@item_title</span>
 						</div>
 						<div class="item-type">
-							<span>@item.Type</span>
+						@{
+							var item_type = item.Type;
+							if (item.Type.Length > 51) { item_type = item.Type.Substring(0, 50); }
+							else { item_type = item.Type; }
+						}
+							<span>@item_type</span>
 						</div>
 					</div>
 					<div class="item-price">
@@ -414,11 +470,11 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
@@ -435,8 +491,19 @@
 	<div class="items-container DOWN2UP_PRICE" style="display: none;">
 		@foreach (Models.Item item in ViewBag.DOWN2UP_PRICE)
 		{
+		var item_title = item.Title;
+if (item.Title.Length > 12)
+{ item_title = item.Title.Substring(0, 12) + "..."; }
 			<a href="/Catalog/ItemDetail/@item.Id" class="item-card-clicker">
-				<div class="item-card">
+				<div class="item-card" id="item-card-item-@item.Id">
+					@if (item.Count == 0)
+					{
+						<style>
+							#item-card-item-@item.Id {
+								opacity: .8;
+							}
+						</style>
+					}
 					<div class="fav-container">
 						@{
 							if (ViewBag.favs.Contains(item.Id))
@@ -444,7 +511,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="RemoveFavorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', false)" type="submit" class="fav in-fav">&nbsp;</button>
 												</form>
 							}
 							else
@@ -452,7 +519,7 @@
 												<form id="fav-form-@item.Id" method="post" asp-action="Favorites" asp-controller="Catalog">
 													<input hidden type="number" name="ItemId" value="@item.Id" />
 													<input hidden type="text" name="NeedToRedirect" value="false" />
-													<button id="fav-@item.Id" onclick="show_modal('@item.Title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
+													<button id="fav-@item.Id" onclick="show_modal('@item_title', 'fav-@item.Id', true)" type="submit" class="fav">&nbsp;</button>
 												</form>
 							}
 						}
@@ -462,10 +529,15 @@
 					</div>
 					<div class="item-text-container">
 						<div class="item-title">
-							<span>@item.Title</span>
+							<span>@item_title</span>
 						</div>
 						<div class="item-type">
-							<span>@item.Type</span>
+						@{
+							var item_type = item.Type;
+							if (item.Type.Length > 51) { item_type = item.Type.Substring(0, 50); }
+							else { item_type = item.Type; }
+						}
+							<span>@item_type</span>
 						</div>
 					</div>
 					<div class="item-price">
@@ -480,11 +552,11 @@
 								{
 									if (ViewBag.carts.Contains(item.Id))
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart in-cart" type="submit">В КОРЗИНЕ</button>
 									}
 									else
 									{
-														<button id="to-cart-@item.Id" onclick="show_modal('@item.Title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
+														<button id="to-cart-@item.Id" onclick="show_modal('@item_title', 'to-cart-@item.Id')" class="item-btn to-cart" type="submit">В КОРЗИНУ</button>
 									}
 								}
 								else
